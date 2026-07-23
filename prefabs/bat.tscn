@@ -93,13 +93,17 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gysuc"]
+size = Vector2(26, 26)
+
 [node name="bat" type="CharacterBody2D" unique_id=2129195820]
 position = Vector2(240, 192)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1036791196]
 sprite_frames = SubResource("SpriteFrames_8v2bw")
-animation = &"fly"
+animation = &"die"
 autoplay = "fly"
-frame_progress = 0.16472374
+frame_progress = 0.46354577
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=645440152]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1884781254]
+shape = SubResource("RectangleShape2D_gysuc")
