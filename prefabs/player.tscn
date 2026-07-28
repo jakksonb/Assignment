@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dc5qid120bfux" path="res://CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterNoSword/CharacterRunNoSword.png" id="5_rgeog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1txc5"]
-size = Vector2(20, 26)
+size = Vector2(22, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
 atlas = ExtResource("2_g2jcq")
@@ -155,20 +155,21 @@ animations = [{
 }],
 "loop": true,
 "name": &"run",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=260363613]
 script = ExtResource("1_ht1c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1677157077]
-position = Vector2(0, 3)
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_1txc5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1654210250]
 sprite_frames = SubResource("SpriteFrames_2wuci")
-animation = &"jump"
+animation = &"run"
 autoplay = "idle"
-frame_progress = 0.6893103
+frame_progress = 0.7253874
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=726053813]
+zoom = Vector2(2.5, 2.5)
