@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ctknxvyd2e6m8" path="res://prefabs/player.tscn" id="2_h0nt1"]
 [ext_resource type="Texture2D" uid="uid://dj8y0mfb3bxsr" path="res://CastleDungeonPackv3/CastleDungeonPackv3/Decorations/Decorations.png" id="2_nf54y"]
 [ext_resource type="Script" uid="uid://cjbykojvhq7er" path="res://scripts/spike_1.gd" id="3_nf54y"]
+[ext_resource type="PackedScene" uid="uid://d2jnghdp3acxq" path="res://prefabs/coin.tscn" id="5_4xw1d"]
+[ext_resource type="Script" uid="uid://c6igg41thuivw" path="res://scripts/coin.gd" id="6_bq37x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf54y"]
 texture = ExtResource("1_wpp1k")
@@ -436,4 +438,18 @@ shape = SubResource("RectangleShape2D_4xw1d")
 [node name="player" parent="." unique_id=260363613 instance=ExtResource("2_h0nt1")]
 position = Vector2(464, 525)
 
+[node name="coin" parent="." unique_id=1127413996 instance=ExtResource("5_4xw1d")]
+position = Vector2(408, 368)
+script = ExtResource("6_bq37x")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1133156719]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=235198996]
+offset_left = 240.0
+offset_top = 400.0
+offset_right = 280.0
+offset_bottom = 423.0
+text = "0"
+
 [connection signal="body_entered" from="traps and hazards collision boxes/spike1" to="traps and hazards collision boxes/spike1" method="_on_body_entered"]
+[connection signal="body_entered" from="coin" to="coin" method="_on_body_entered"]
