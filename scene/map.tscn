@@ -1,11 +1,12 @@
 [gd_scene format=4 uid="uid://brvcp7xlfia82"]
 
+[ext_resource type="Script" uid="uid://cr1ldv40isett" path="res://scripts/canvas_layer.gd" id="1_bq37x"]
 [ext_resource type="Texture2D" uid="uid://btmhqklt287qd" path="res://CastleDungeonPackv3/CastleDungeonPackv3/Tileset/Tileset.png" id="1_wpp1k"]
-[ext_resource type="PackedScene" uid="uid://ctknxvyd2e6m8" path="res://prefabs/player.tscn" id="2_h0nt1"]
+[ext_resource type="FontFile" uid="uid://d1u4mxup5ev2c" path="res://m5x7.ttf" id="2_jp76l"]
 [ext_resource type="Texture2D" uid="uid://dj8y0mfb3bxsr" path="res://CastleDungeonPackv3/CastleDungeonPackv3/Decorations/Decorations.png" id="2_nf54y"]
 [ext_resource type="Script" uid="uid://cjbykojvhq7er" path="res://scripts/spike_1.gd" id="3_nf54y"]
 [ext_resource type="PackedScene" uid="uid://d2jnghdp3acxq" path="res://prefabs/coin.tscn" id="5_4xw1d"]
-[ext_resource type="Script" uid="uid://c6igg41thuivw" path="res://scripts/coin.gd" id="6_bq37x"]
+[ext_resource type="PackedScene" uid="uid://ctknxvyd2e6m8" path="res://prefabs/player.tscn" id="6_bq37x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf54y"]
 texture = ExtResource("1_wpp1k")
@@ -402,6 +403,10 @@ sources/0 = SubResource("TileSetAtlasSource_jp76l")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xw1d"]
 size = Vector2(12, 30)
 
+[sub_resource type="LabelSettings" id="LabelSettings_7ac5c"]
+font = ExtResource("2_jp76l")
+font_size = 35
+
 [node name="map" type="Node2D" unique_id=1222933388]
 
 [node name="tile maps" type="Node2D" parent="." unique_id=1065545897]
@@ -435,21 +440,27 @@ script = ExtResource("3_nf54y")
 position = Vector2(262, 393)
 shape = SubResource("RectangleShape2D_4xw1d")
 
-[node name="player" parent="." unique_id=260363613 instance=ExtResource("2_h0nt1")]
-position = Vector2(464, 525)
-
 [node name="coin" parent="." unique_id=1127413996 instance=ExtResource("5_4xw1d")]
-position = Vector2(408, 368)
-script = ExtResource("6_bq37x")
+position = Vector2(405, 363)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1133156719]
+[node name="player" parent="." unique_id=260363613 instance=ExtResource("6_bq37x")]
+position = Vector2(486, 525)
 
-[node name="Label" type="Label" parent="CanvasLayer" unique_id=235198996]
-offset_left = 240.0
-offset_top = 400.0
-offset_right = 280.0
-offset_bottom = 423.0
-text = "0"
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=617487221]
+script = ExtResource("1_bq37x")
+
+[node name="coin" type="Label" parent="CanvasLayer" unique_id=954985323]
+anchors_preset = -1
+anchor_left = -0.042000003
+anchor_top = 0.65500003
+anchor_right = -0.042000003
+anchor_bottom = 0.65500003
+offset_left = 95.384
+offset_top = -375.44003
+offset_right = 145.384
+offset_bottom = -326.44003
+text = "0
+"
+label_settings = SubResource("LabelSettings_7ac5c")
 
 [connection signal="body_entered" from="traps and hazards collision boxes/spike1" to="traps and hazards collision boxes/spike1" method="_on_body_entered"]
-[connection signal="body_entered" from="coin" to="coin" method="_on_body_entered"]
