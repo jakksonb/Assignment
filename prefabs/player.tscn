@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dc5qid120bfux" path="res://CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterNoSword/CharacterRunNoSword.png" id="5_rgeog"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1txc5"]
-size = Vector2(22, 24)
+size = Vector2(14, 24)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
 atlas = ExtResource("2_g2jcq")
@@ -166,6 +166,7 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_1txc5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1654210250]
+position = Vector2(4.7683716e-07, 0)
 sprite_frames = SubResource("SpriteFrames_2wuci")
 animation = &"run"
 autoplay = "idle"

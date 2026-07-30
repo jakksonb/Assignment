@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 var start_position = Vector2(464, 525)
 const SPEED = 225.0
-const JUMP_VELOCITY = -325.0
+const JUMP_VELOCITY = -299.0
 
 func _physics_process(delta: float) -> void:
 	# Gravity
