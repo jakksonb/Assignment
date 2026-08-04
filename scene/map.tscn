@@ -426,6 +426,9 @@ size = Vector2(10, 14.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qxkh"]
 size = Vector2(12, 26.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bc6k"]
+size = Vector2(29, 12.25)
+
 [sub_resource type="LabelSettings" id="LabelSettings_7ac5c"]
 font = ExtResource("2_jp76l")
 font_size = 35
@@ -447,7 +450,7 @@ tile_set = SubResource("TileSet_jp76l")
 tile_set = SubResource("TileSet_bq37x")
 
 [node name="traps and hazards" type="TileMapLayer" parent="tile maps" unique_id=753788581]
-tile_map_data = PackedByteArray("AAAPABgAAAAAAAYAAAAPABcAAAAAAAYAAAAQABgAAAADAAcAAAAQABcAAAADAAcAAAAfAAsAAAACAAgAAAAhAAcAAAACAAgAAAATABEAAAADAAcAAAASABIAAAACAAcAAAATABIAAAADAAcAAAAQAAoAAAACAAcAAAAQAAsAAAACAAcAAAARAAoAAAADAAcAAAARAAsAAAADAAcAAAA=")
+tile_map_data = PackedByteArray("AAAPABgAAAAAAAYAAAAPABcAAAAAAAYAAAAQABgAAAADAAcAAAAQABcAAAADAAcAAAAfAAsAAAACAAgAAAAhAAcAAAACAAgAAAATABEAAAADAAcAAAASABIAAAACAAcAAAATABIAAAADAAcAAAAQAAoAAAACAAcAAAAQAAsAAAACAAcAAAARAAoAAAADAAcAAAARAAsAAAADAAcAAAAeABsAAAACAAkAAAAfABsAAAACAAkAAAA=")
 tile_set = SubResource("TileSet_7ac5c")
 
 [node name="scenery" type="TileMapLayer" parent="tile maps" unique_id=1130346454]
@@ -492,6 +495,13 @@ script = ExtResource("3_nf54y")
 position = Vector2(278, 185)
 shape = SubResource("RectangleShape2D_4xw1d")
 
+[node name="spike6" type="Area2D" parent="traps and hazards collision boxes" unique_id=1972824028]
+script = ExtResource("3_nf54y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="traps and hazards collision boxes/spike6" unique_id=1304429786]
+position = Vector2(495.5, 450.125)
+shape = SubResource("RectangleShape2D_0bc6k")
+
 [node name="player" parent="." unique_id=260363613 instance=ExtResource("6_bq37x")]
 position = Vector2(486, 525)
 
@@ -504,10 +514,10 @@ anchor_left = -0.042000003
 anchor_top = 0.65500003
 anchor_right = -0.042000003
 anchor_bottom = 0.65500003
-offset_left = 95.384
+offset_left = 100.384
 offset_top = -375.44003
-offset_right = 145.384
-offset_bottom = -326.44003
+offset_right = 150.384
+offset_bottom = -314.44003
 text = "0
 "
 label_settings = SubResource("LabelSettings_7ac5c")
@@ -530,3 +540,4 @@ position = Vector2(241, 266)
 [connection signal="body_entered" from="traps and hazards collision boxes/spike3" to="traps and hazards collision boxes/spike3" method="_on_body_entered"]
 [connection signal="body_entered" from="traps and hazards collision boxes/spike4" to="traps and hazards collision boxes/spike4" method="_on_body_entered"]
 [connection signal="body_entered" from="traps and hazards collision boxes/spike5" to="traps and hazards collision boxes/spike5" method="_on_body_entered"]
+[connection signal="body_entered" from="traps and hazards collision boxes/spike6" to="traps and hazards collision boxes/spike6" method="_on_body_entered"]
