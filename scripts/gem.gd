@@ -8,13 +8,13 @@ func _on_body_entered(body: Node2D) -> void:
 		Score.add_point(5)
 		Sprite.play("collect",1.0,false)
 		print(Sprite.animation)
+		
+		$CollisionShape2D.disabled = true
 		  #replace frame time with a float of the time (seconds) per frame
-	if not Sprite.is_playing():  #wait for anim end
-		print("anim fin")
-		#self.queue_free()
-		
-		
+
+
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	self.queue_free() # Replace with function body.
+	if Sprite.animation == "collect":
+		queue_free()
