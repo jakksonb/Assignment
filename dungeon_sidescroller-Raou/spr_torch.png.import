@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tq42r7shm73d"
-path="res://.godot/imported/wall.png-98353373beed3f721dc2e9bd79ad46e0.ctex"
+uid="uid://ca780lucsdt6j"
+path="res://.godot/imported/spr_torch.png-4764931b12c9fb431a2b94bdc18dc23b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Pixel Art Gem Pack - Animated/wall.png"
-dest_files=["res://.godot/imported/wall.png-98353373beed3f721dc2e9bd79ad46e0.ctex"]
+source_file="res://dungeon_sidescroller-Raou/spr_torch.png"
+dest_files=["res://.godot/imported/spr_torch.png-4764931b12c9fb431a2b94bdc18dc23b.ctex"]
 
 [params]
 
