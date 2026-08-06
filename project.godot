@@ -13,7 +13,7 @@ config_version=5
 config/name="UNDER"
 run/main_scene="uid://brvcp7xlfia82"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://random bs/icon.svg"
 
 [autoload]
 

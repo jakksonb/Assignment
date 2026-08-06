@@ -2,13 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cr1ldv40isett" path="res://scripts/canvas_layer.gd" id="1_bq37x"]
 [ext_resource type="Texture2D" uid="uid://btmhqklt287qd" path="res://CastleDungeonPackv3/CastleDungeonPackv3/Tileset/Tileset.png" id="1_wpp1k"]
-[ext_resource type="Texture2D" uid="uid://hxfvw08vgfyk" path="res://Dungeon Tile Set.png" id="2_8qxkh"]
-[ext_resource type="FontFile" uid="uid://d1u4mxup5ev2c" path="res://m5x7.ttf" id="2_jp76l"]
+[ext_resource type="Texture2D" uid="uid://hxfvw08vgfyk" path="res://random bs/Dungeon Tile Set.png" id="2_8qxkh"]
+[ext_resource type="FontFile" uid="uid://d1u4mxup5ev2c" path="res://random bs/m5x7.ttf" id="2_jp76l"]
 [ext_resource type="Script" uid="uid://cjbykojvhq7er" path="res://scripts/spike_1.gd" id="3_nf54y"]
 [ext_resource type="PackedScene" uid="uid://d2jnghdp3acxq" path="res://prefabs/coin.tscn" id="5_4xw1d"]
 [ext_resource type="PackedScene" uid="uid://ctknxvyd2e6m8" path="res://prefabs/player.tscn" id="6_bq37x"]
 [ext_resource type="PackedScene" uid="uid://cymhcgpo553lt" path="res://prefabs/gem.tscn" id="8_7ac5c"]
 [ext_resource type="PackedScene" uid="uid://de27ggbyjkji8" path="res://prefabs/torch.tscn" id="9_0bc6k"]
+[ext_resource type="Texture2D" uid="uid://ckks21v08e3yt" path="res://FREE Textures Of Light Alpha/FREE Textures Of Light Alpha/64x64/64x64 textures (45).png" id="10_0bc6k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf54y"]
 texture = ExtResource("1_wpp1k")
@@ -537,7 +538,7 @@ tile_map_data = PackedByteArray("AAANACQAAAAAAAIAAAAOACQAAAABAAIAAAAPACQAAAABAAI
 tile_set = SubResource("TileSet_jp76l")
 
 [node name="scenery" type="TileMapLayer" parent="tile maps" unique_id=1130346454]
-tile_map_data = PackedByteArray("AAAQACAAAAAGAAQAAAATACAAAAAFAAQAAAAWAB4AAAAFAAQAAAAYAB4AAAAFAAQAAAAXAB0AAAAGAAUAAAAQABgAAAAGAAUAAAAXABoAAAAGAAUAAAAWABsAAAAGAAQAAAAUABsAAAAGAAQAAAAdABwAAAAFAAQAAAARABkAAAAFAAQAAAAQABkAAAAGAAQAAAASACAAAAAFAAYAAAAfABwAAAAFAAYAAAAYABsAAAAFAAYAAAASABkAAAAFAAYAAAAaAA4AAAAFAAYAAAAgAAsAAAAFAAoAAAAgAAoAAAAFAAcAAAAXABQAAAAGAAQAAAAOABEAAAAFAAYAAAASABEAAAAFAAYAAAARAAwAAAAFAAYAAAAfAAwAAAAFAAYAAAASAAkAAAAFAAYAAAAOAAoAAAAFAAYAAAAdABIAAAAFAAYAAAAfAAsAAAAHAAUAAAAdAAwAAAAGAAQAAAAaABEAAAAFAAQAAAAUAAwAAAAFAAQAAAAPAAkAAAAFAAQAAAARABEAAAAFAAQAAAAYABcAAAAFAAQAAAAaABcAAAAFAAQAAAAZABcAAAAGAAQAAAATAAwAAAAGAAQAAAAOAAkAAAAGAAQAAAAQAAoAAAAGAAgAAAASABIAAAAGAAgAAAASAAoAAAAHAAkAAAAhAAwAAAAHAAkAAAAbABIAAAAGAAkAAAAdAAsAAAAHAAoAAAARAAgAAAAHAAoAAAASABgAAAAHAAoAAAAQABAAAAAHAAoAAAAbABAAAAAGAAoAAAAdABEAAAAHAAUAAAAZABEAAAAFAAUAAAAeABsAAAAGAAUAAAAfABsAAAAGAAUAAAA=")
+tile_map_data = PackedByteArray("AAAQACAAAAAGAAQAAAATACAAAAAFAAQAAAAWAB4AAAAFAAQAAAAYAB4AAAAFAAQAAAAXAB0AAAAGAAUAAAAQABgAAAAGAAUAAAAXABoAAAAGAAUAAAAWABsAAAAGAAQAAAAUABsAAAAGAAQAAAAdABwAAAAFAAQAAAARABkAAAAFAAQAAAAQABkAAAAGAAQAAAASACAAAAAFAAYAAAAfABwAAAAFAAYAAAAYABsAAAAFAAYAAAASABkAAAAFAAYAAAAaAA4AAAAFAAYAAAAgAAsAAAAFAAoAAAAgAAoAAAAFAAcAAAAXABQAAAAGAAQAAAAOABEAAAAFAAYAAAASABEAAAAFAAYAAAAfAAwAAAAFAAYAAAASAAkAAAAFAAYAAAAOAAoAAAAFAAYAAAAdABIAAAAFAAYAAAAfAAsAAAAHAAUAAAAdAAwAAAAGAAQAAAAaABEAAAAFAAQAAAAPAAkAAAAFAAQAAAARABEAAAAFAAQAAAAYABcAAAAFAAQAAAAaABcAAAAFAAQAAAAZABcAAAAGAAQAAAAOAAkAAAAGAAQAAAAQAAoAAAAGAAgAAAASABIAAAAGAAgAAAASAAoAAAAHAAkAAAAhAAwAAAAHAAkAAAAbABIAAAAGAAkAAAAdAAsAAAAHAAoAAAARAAgAAAAHAAoAAAASABgAAAAHAAoAAAAQABAAAAAHAAoAAAAbABAAAAAGAAoAAAAdABEAAAAHAAUAAAAZABEAAAAFAAUAAAAeABsAAAAGAAUAAAAfABsAAAAGAAUAAAATAA0AAAAFAAYAAAAVAAwAAAAHAAUAAAAUAAsAAAAGAAUAAAAUAAwAAAAGAAUAAAARAAwAAAAFAAQAAAA=")
 tile_set = SubResource("TileSet_nf54y")
 
 [node name="decorations" type="TileMapLayer" parent="tile maps" unique_id=1348296054]
@@ -653,6 +654,17 @@ frame_progress = 0.7399638
 [node name="torch6" parent="torches" unique_id=303223103 instance=ExtResource("9_0bc6k")]
 position = Vector2(498, 240)
 frame_progress = 0.7399638
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1281375564]
+color = Color(0.27509058, 0.27509058, 0.27509055, 1)
+
+[node name="lights for torches" type="Node2D" parent="." unique_id=2132882654]
+
+[node name="PointLight2D" type="PointLight2D" parent="lights for torches" unique_id=1094464861]
+position = Vector2(473, 279)
+color = Color(0.7338106, 0.42155573, 0.14295167, 1)
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
 
 [connection signal="body_entered" from="traps and hazards collision boxes/spike1" to="traps and hazards collision boxes/spike1" method="_on_body_entered"]
 [connection signal="body_entered" from="traps and hazards collision boxes/spike2" to="traps and hazards collision boxes/spike2" method="_on_body_entered"]

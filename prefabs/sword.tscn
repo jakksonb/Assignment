@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://td4w82fyhok8"]
+
+[ext_resource type="Texture2D" uid="uid://bgfugjrt8uyg4" path="res://random bs/New Piskel-20260806-120521-frame0.png" id="1_ft5er"]
+
+[node name="sword" type="Area2D" unique_id=1954809594]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1239755832]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=701065362]
+rotation = -0.7853982
+texture = ExtResource("1_ft5er")

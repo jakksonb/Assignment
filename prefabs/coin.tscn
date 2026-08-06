@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2jnghdp3acxq"]
 
-[ext_resource type="Texture2D" uid="uid://cwg3bar08wrc0" path="res://Coin_tiles.png" id="1_8bk7x"]
+[ext_resource type="Texture2D" uid="uid://cwg3bar08wrc0" path="res://random bs/Coin_tiles.png" id="1_8bk7x"]
 [ext_resource type="Script" uid="uid://c6igg41thuivw" path="res://scripts/coin.gd" id="1_h1t07"]
 [ext_resource type="Texture2D" uid="uid://b45otlgvcy1lr" path="res://Pixel Art Gem Pack - Animated/Pixel Art Gem Pack - Animated/Spark/Spark - Spritesheet.png" id="2_ab8qe"]
 
