@@ -524,6 +524,232 @@ size = Vector2(29, 12.25)
 font = ExtResource("2_jp76l")
 font_size = 35
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0bc6k"]
+
+[sub_resource type="Animation" id="Animation_8vfk2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lights for torches/PointLight2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.2333333),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5.116208, 5.018555)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lights for torches/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.96666664),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [7.7]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lights for torches/PointLight2D2:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [5.8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("lights for torches/PointLight2D2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_v66k7"]
+resource_name = "flicker"
+length = 1.2333333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lights for torches/PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4333, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [7.7, 10.61]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lights for torches/PointLight2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3667, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5.116208, 5.018555), Vector2(5.526852, 5.2045913)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lights for torches/PointLight2D2:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.4333, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [7.7, 10.61]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("lights for torches/PointLight2D2:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.3667, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5.116208, 5.018555), Vector2(5.526852, 5.2045913)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_44fbv"]
+_data = {
+&"RESET": SubResource("Animation_8vfk2"),
+&"flicker": SubResource("Animation_v66k7")
+}
+
+[sub_resource type="Animation" id="Animation_0bc6k"]
+resource_name = "flickerr"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lights for torches/PointLight2D3:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lights for torches/PointLight2D3:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lights for torches/PointLight2D4:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("lights for torches/PointLight2D4:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8vfk2"]
+_data = {
+&"flickerr": SubResource("Animation_0bc6k")
+}
+
+[sub_resource type="Animation" id="Animation_44fbv"]
+resource_name = "flickererer"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("lights for torches/PointLight2D5:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("lights for torches/PointLight2D5:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("lights for torches/PointLight2D6:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("lights for torches/PointLight2D6:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_l8r8p"]
+_data = {
+&"flickererer": SubResource("Animation_44fbv")
+}
+
 [node name="map" type="Node2D" unique_id=1222933388]
 
 [node name="tile maps" type="Node2D" parent="." unique_id=1065545897]
@@ -632,26 +858,32 @@ position = Vector2(241, 266)
 [node name="torches" type="Node2D" parent="." unique_id=1408648458]
 
 [node name="torch" parent="torches" unique_id=186190142 instance=ExtResource("9_0bc6k")]
+light_mask = 0
 position = Vector2(270, 346)
 frame_progress = 0.58645093
 
 [node name="torch2" parent="torches" unique_id=814231359 instance=ExtResource("9_0bc6k")]
+light_mask = 0
 position = Vector2(247, 215)
 frame_progress = 0.1201421
 
 [node name="torch3" parent="torches" unique_id=1684219218 instance=ExtResource("9_0bc6k")]
+light_mask = 0
 position = Vector2(436, 430)
 frame_progress = 0.7399638
 
 [node name="torch4" parent="torches" unique_id=551875435 instance=ExtResource("9_0bc6k")]
+light_mask = 0
 position = Vector2(282, 472)
 frame_progress = 0.7399638
 
 [node name="torch5" parent="torches" unique_id=1331666569 instance=ExtResource("9_0bc6k")]
+light_mask = 0
 position = Vector2(482, 145)
 frame_progress = 0.7399638
 
 [node name="torch6" parent="torches" unique_id=303223103 instance=ExtResource("9_0bc6k")]
+light_mask = 0
 position = Vector2(498, 240)
 frame_progress = 0.7399638
 
@@ -661,10 +893,76 @@ color = Color(0.27509058, 0.27509058, 0.27509055, 1)
 [node name="lights for torches" type="Node2D" parent="." unique_id=2132882654]
 
 [node name="PointLight2D" type="PointLight2D" parent="lights for torches" unique_id=1094464861]
-position = Vector2(473, 279)
-color = Color(0.7338106, 0.42155573, 0.14295167, 1)
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(436.00003, 429.00003)
+scale = Vector2(5.116208, 5.018555)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 7.7
+shadow_enabled = true
 texture = ExtResource("10_0bc6k")
 texture_scale = 0.4
+
+[node name="PointLight2D2" type="PointLight2D" parent="lights for torches" unique_id=694732692]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(282.00003, 472.00003)
+scale = Vector2(5.116208, 5.018555)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 5.8
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
+[node name="PointLight2D3" type="PointLight2D" parent="lights for torches" unique_id=787761389]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(269.99997, 346)
+scale = Vector2(5.527, 5.318)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 7.7
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
+[node name="PointLight2D4" type="PointLight2D" parent="lights for torches" unique_id=1531639609]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(247, 214.00002)
+scale = Vector2(5.527, 4.949)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 9.503221
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
+[node name="PointLight2D5" type="PointLight2D" parent="lights for torches" unique_id=925958251]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(498, 239)
+scale = Vector2(5.527, 5.068)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 9.690892
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
+[node name="PointLight2D6" type="PointLight2D" parent="lights for torches" unique_id=976448176]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(482.00003, 144.99997)
+scale = Vector2(5.527, 5.127)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 9.690892
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1013157508]
+libraries/ = SubResource("AnimationLibrary_44fbv")
+autoplay = &"flicker"
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=422585672]
+libraries/ = SubResource("AnimationLibrary_8vfk2")
+autoplay = &"flickerr"
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="." unique_id=946839137]
+libraries/ = SubResource("AnimationLibrary_l8r8p")
+autoplay = &"flickererer"
 
 [connection signal="body_entered" from="traps and hazards collision boxes/spike1" to="traps and hazards collision boxes/spike1" method="_on_body_entered"]
 [connection signal="body_entered" from="traps and hazards collision boxes/spike2" to="traps and hazards collision boxes/spike2" method="_on_body_entered"]

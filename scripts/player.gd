@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+var has_sword = false
+var attacking = false
+
 @onready var anim = $AnimatedSprite2D
 
 var start_position = Vector2(464, 525)
@@ -40,6 +43,19 @@ func _physics_process(delta: float) -> void:
 
 	else:
 		anim.animation = "idle"
+		
+		
+	if not is_on_floor():
+		if velocity.y < 0:
+			anim.animation = "jump"
+		else:
+			anim.animation = "fall"
+
+	elif abs(velocity.x) > 0:
+		anim.animation = "run"
+
+	else:
+		anim.animation = "idle"
 
 
 
@@ -50,3 +66,10 @@ func _physics_process(delta: float) -> void:
 func respawn():
 	position = start_position
 	
+
+	if Input.is_action_pressed("attack") and has_sword:
+		attacking = true
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if attacking:
+		attacking = false
