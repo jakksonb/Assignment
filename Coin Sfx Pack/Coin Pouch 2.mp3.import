@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://drad3qst5pj6c"
+path="res://.godot/imported/Coin Pouch 2.mp3-027166a4673f78f989d9918ebaa96c49.mp3str"
+
+[deps]
+
+source_file="res://Coin Sfx Pack/Coin Pouch 2.mp3"
+dest_files=["res://.godot/imported/Coin Pouch 2.mp3-027166a4673f78f989d9918ebaa96c49.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

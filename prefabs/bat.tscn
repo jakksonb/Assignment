@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dnunrw4do7sjn"]
 
+[ext_resource type="Script" uid="uid://buk8hpm26ykax" path="res://scripts/bat.gd" id="1_at8pt"]
 [ext_resource type="Texture2D" uid="uid://cm3i7jko6uvmk" path="res://CastleDungeonPackv3/CastleDungeonPackv3/BatMonster/BatDie.png" id="1_gysuc"]
 [ext_resource type="Texture2D" uid="uid://bgjqy1e7aej3q" path="res://CastleDungeonPackv3/CastleDungeonPackv3/BatMonster/BatFly.png" id="2_at8pt"]
 
@@ -90,19 +91,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"fly",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gysuc"]
-size = Vector2(26, 26)
+size = Vector2(18, 14)
 
 [node name="bat" type="CharacterBody2D" unique_id=2129195820]
+script = ExtResource("1_at8pt")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1036791196]
+scale = Vector2(0.7135417, 0.734375)
 sprite_frames = SubResource("SpriteFrames_8v2bw")
-animation = &"die"
+animation = &"fly"
 autoplay = "fly"
-frame_progress = 0.46354577
+frame_progress = 0.7876287
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1884781254]
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_gysuc")

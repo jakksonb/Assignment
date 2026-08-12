@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bkewniy5w5a5y" path="res://scripts/gem.gd" id="1_x6t6c"]
 [ext_resource type="Texture2D" uid="uid://s2rmqsgmk1us" path="res://Pixel Art Gem Pack - Animated/Pixel Art Gem Pack - Animated/GEM 9/GEM 9 - LIGHT GREEN - Spritesheet.png" id="2_07sb1"]
 [ext_resource type="Texture2D" uid="uid://b45otlgvcy1lr" path="res://Pixel Art Gem Pack - Animated/Pixel Art Gem Pack - Animated/Spark/Spark - Spritesheet.png" id="3_c0jft"]
+[ext_resource type="AudioStream" uid="uid://dkcpymhri8wcm" path="res://Coin Sfx Pack/Retro Coin 2.mp3" id="4_07sb1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x6t6c"]
 atlas = ExtResource("3_c0jft")
@@ -173,11 +174,15 @@ script = ExtResource("1_x6t6c")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1077052315]
 scale = Vector2(0.43518513, 0.44230768)
 sprite_frames = SubResource("SpriteFrames_8lt5w")
-animation = &"collect"
+animation = &"shine"
 autoplay = "shine"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2106399245]
 shape = SubResource("RectangleShape2D_x6t6c")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1040998372]
+stream = ExtResource("4_07sb1")
+volume_db = 4.522
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

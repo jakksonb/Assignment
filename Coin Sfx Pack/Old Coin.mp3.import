@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://h7kovonpknqx"
+path="res://.godot/imported/Old Coin.mp3-345bafffe2b48698b1f3c47858126468.mp3str"
+
+[deps]
+
+source_file="res://Coin Sfx Pack/Old Coin.mp3"
+dest_files=["res://.godot/imported/Old Coin.mp3-345bafffe2b48698b1f3c47858126468.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

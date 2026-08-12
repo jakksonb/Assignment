@@ -1,20 +1,22 @@
 extends CharacterBody2D
 
+#variables and declarations
 var has_sword = false
 var attacking = false
 
 @onready var anim = $AnimatedSprite2D
-
+@onready var jump_sound = $AudioStreamPlayer
+@onready var jump_land = $AudioStreamPlayer2
 var start_position = Vector2(464, 525)
 const SPEED = 225.0
 const JUMP_VELOCITY = -299.0
 
 func _physics_process(delta: float) -> void:
-	# Gravity
+	#handles gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	# Jump
+	#handles player jumping
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
@@ -25,15 +27,16 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	# Flip sprite
+	#this flips the player sprite when moving left or right
 	if direction != 0:
 		anim.scale.x = direction
 
 	move_and_slide()
 
- 
+ #this handles animation of the player when moving a direction
 	if not is_on_floor():
 		if velocity.y < 0:
+			jump_sound.play()
 			anim.animation = "jump"
 		else:
 			anim.animation = "fall"
@@ -44,18 +47,20 @@ func _physics_process(delta: float) -> void:
 	else:
 		anim.animation = "idle"
 		
+	
 		
-	if not is_on_floor():
-		if velocity.y < 0:
-			anim.animation = "jump"
-		else:
-			anim.animation = "fall"
+		
+	#if not is_on_floor() and has_sword:
+		#if velocity.y < 0:
+			#anim.animation = "jump_sword"
+		#else:
+			#anim.animation = "fall_sword"
 
-	elif abs(velocity.x) > 0:
-		anim.animation = "run"
+	#elif abs(velocity.x) > 0:
+		#anim.animation = "run_sword"
 
-	else:
-		anim.animation = "idle"
+	#else:
+		#anim.animation = "idle_sword"
 
 
 
