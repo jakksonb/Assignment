@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c0kfbph6narfg" path="res://scripts/player.gd" id="1_ht1c8"]
 [ext_resource type="Texture2D" uid="uid://b6qpll3dnaogr" path="res://CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterNoSword/CharacterFallNoSword.png" id="2_g2jcq"]
+[ext_resource type="Texture2D" uid="uid://hbpjyivsc2cv" path="res://CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharAttack.png" id="2_sd3sa"]
 [ext_resource type="Texture2D" uid="uid://bdqm7yfatuke2" path="res://CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterFall.png" id="3_rgeog"]
 [ext_resource type="Texture2D" uid="uid://dmv5e5uf8u56y" path="res://CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterNoSword/CharacterIdleNoSword.png" id="3_u51tk"]
 [ext_resource type="Texture2D" uid="uid://bxhens5mb6fgq" path="res://CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterNoSword/CharacterJumpNoSword.png" id="4_kbsxf"]
@@ -14,6 +15,26 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1txc5"]
 size = Vector2(14, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2c4y0"]
+atlas = ExtResource("2_sd3sa")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w4pj3"]
+atlas = ExtResource("2_sd3sa")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1s2y"]
+atlas = ExtResource("2_sd3sa")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0anbp"]
+atlas = ExtResource("2_sd3sa")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e3k5d"]
+atlas = ExtResource("2_sd3sa")
+region = Rect2(256, 0, 64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
 atlas = ExtResource("2_g2jcq")
@@ -161,6 +182,26 @@ region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2wuci"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2c4y0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w4pj3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1s2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0anbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3k5d")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_n7ghd")
@@ -320,7 +361,7 @@ shape = SubResource("RectangleShape2D_1txc5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1654210250]
 position = Vector2(4.7683716e-07, 0)
 sprite_frames = SubResource("SpriteFrames_2wuci")
-animation = &"run_sword"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=726053813]

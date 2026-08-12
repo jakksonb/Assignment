@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://td4w82fyhok8"]
 
 [ext_resource type="Script" uid="uid://bhqyrsc22gdxy" path="res://scripts/sword.gd" id="1_ft5er"]
+[ext_resource type="Texture2D" uid="uid://bgfugjrt8uyg4" path="res://random bs/New Piskel-20260806-120521-frame0.png" id="2_vqqhk"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vqqhk"]
-size = Vector2(44, 45)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7m7y"]
+size = Vector2(16, 16)
 
-[node name="sword" unique_id=1954809594]
+[node name="sword" type="Area2D" unique_id=629509775]
 script = ExtResource("1_ft5er")
 
-[node name="CollisionShape2D" parent="." index="0" unique_id=1239755832]
-position = Vector2(1, -2.5)
-shape = SubResource("RectangleShape2D_vqqhk")
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=874659174]
+rotation = -0.7853982
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("2_vqqhk")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801099221]
+shape = SubResource("RectangleShape2D_l7m7y")
