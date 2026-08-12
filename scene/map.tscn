@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://d1u4mxup5ev2c" path="res://random bs/m5x7.ttf" id="2_jp76l"]
 [ext_resource type="Script" uid="uid://cjbykojvhq7er" path="res://scripts/spike_1.gd" id="3_nf54y"]
 [ext_resource type="PackedScene" uid="uid://d2jnghdp3acxq" path="res://prefabs/coin.tscn" id="5_4xw1d"]
+[ext_resource type="Texture2D" uid="uid://cdtxxes3fnt0t" path="res://random bs/New Piskel (1).png" id="6_44fbv"]
 [ext_resource type="PackedScene" uid="uid://ctknxvyd2e6m8" path="res://prefabs/player.tscn" id="6_bq37x"]
 [ext_resource type="PackedScene" uid="uid://cymhcgpo553lt" path="res://prefabs/gem.tscn" id="8_7ac5c"]
 [ext_resource type="PackedScene" uid="uid://de27ggbyjkji8" path="res://prefabs/torch.tscn" id="9_0bc6k"]
@@ -872,12 +873,18 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Sprite2D" type="Sprite2D" parent="player/CanvasLayer/UI" unique_id=49433392]
+position = Vector2(77, 48)
+scale = Vector2(2.34375, 2.046875)
+texture = ExtResource("6_44fbv")
+
 [node name="money" type="Label" parent="player/CanvasLayer/UI" unique_id=954985323]
 layout_mode = 1
 anchors_preset = -1
-offset_left = 6.0
-offset_right = 46.0
-offset_bottom = 61.0
+offset_left = 35.0
+offset_top = 29.0
+offset_right = 75.0
+offset_bottom = 90.0
 text = "0
 "
 label_settings = SubResource("LabelSettings_7ac5c")
@@ -1057,7 +1064,8 @@ libraries/ = SubResource("AnimationLibrary_l8r8p")
 autoplay = &"flickererer"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="random bs" unique_id=1281375564]
-color = Color(0.27509058, 0.27509058, 0.27509055, 1)
+position = Vector2(1, 0)
+color = Color(0.40705615, 0.40705618, 0.40705615, 1)
 
 [connection signal="body_entered" from="traps and hazards collision boxes/spike1" to="traps and hazards collision boxes/spike1" method="_on_body_entered"]
 [connection signal="body_entered" from="traps and hazards collision boxes/spike2" to="traps and hazards collision boxes/spike2" method="_on_body_entered"]
