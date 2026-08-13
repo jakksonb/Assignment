@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://d1u4mxup5ev2c" path="res://random bs/m5x7.ttf" id="2_jp76l"]
 [ext_resource type="Script" uid="uid://cjbykojvhq7er" path="res://scripts/spike_1.gd" id="3_nf54y"]
 [ext_resource type="PackedScene" uid="uid://d2jnghdp3acxq" path="res://prefabs/coin.tscn" id="5_4xw1d"]
-[ext_resource type="Texture2D" uid="uid://cdtxxes3fnt0t" path="res://random bs/New Piskel (1).png" id="6_44fbv"]
+[ext_resource type="Texture2D" uid="uid://v2iljkfhsnw5" path="res://random bs/New Piskel (1)-1.png.png" id="6_44fbv"]
 [ext_resource type="PackedScene" uid="uid://ctknxvyd2e6m8" path="res://prefabs/player.tscn" id="6_bq37x"]
 [ext_resource type="PackedScene" uid="uid://cymhcgpo553lt" path="res://prefabs/gem.tscn" id="8_7ac5c"]
 [ext_resource type="PackedScene" uid="uid://de27ggbyjkji8" path="res://prefabs/torch.tscn" id="9_0bc6k"]
