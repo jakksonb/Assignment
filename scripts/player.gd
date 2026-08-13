@@ -3,7 +3,7 @@ extends CharacterBody2D
 #variables and declarations
 var has_sword = false
 var attacking = false
-
+var movespeed = 275
 @onready var anim = $AnimatedSprite2D
 @onready var jump_sound = $AudioStreamPlayer
 @onready var jump_land = $AudioStreamPlayer2
@@ -47,7 +47,7 @@ func _physics_process(delta: float) -> void:
 
 		else:
 			anim.animation = "idle"
-		
+			
 	
 		
 	else:
@@ -63,19 +63,21 @@ func _physics_process(delta: float) -> void:
 		else:
 			anim.animation = "idle_sword"
 
-
+	if anim.animation == "run" and Input.is_action_pressed("sprint"):
+		
+			
 
 	if position.y > 900:
 		position = start_position
 
+	if Input.is_action_pressed("attack") and has_sword:
+			attacking = true
 
 func respawn():
 	position = start_position
 	get_tree().reload_current_scene()
+	
 
-
-	if Input.is_action_pressed("attack") and has_sword:
-		attacking = true
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if attacking:
