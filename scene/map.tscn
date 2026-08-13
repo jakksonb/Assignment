@@ -6,13 +6,18 @@
 [ext_resource type="FontFile" uid="uid://d1u4mxup5ev2c" path="res://random bs/m5x7.ttf" id="2_jp76l"]
 [ext_resource type="Script" uid="uid://cjbykojvhq7er" path="res://scripts/spike_1.gd" id="3_nf54y"]
 [ext_resource type="PackedScene" uid="uid://d2jnghdp3acxq" path="res://prefabs/coin.tscn" id="5_4xw1d"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://v2iljkfhsnw5" path="res://random bs/New Piskel (1)-1.png.png" id="6_44fbv"]
+=======
+[ext_resource type="Texture2D" uid="uid://bvn12yuhynyuy" path="res://random bs/edited-photo.png" id="6_44fbv"]
+>>>>>>> e5ab4904e514aa8a8a125d638469be84f385f51b
 [ext_resource type="PackedScene" uid="uid://ctknxvyd2e6m8" path="res://prefabs/player.tscn" id="6_bq37x"]
 [ext_resource type="PackedScene" uid="uid://cymhcgpo553lt" path="res://prefabs/gem.tscn" id="8_7ac5c"]
 [ext_resource type="PackedScene" uid="uid://de27ggbyjkji8" path="res://prefabs/torch.tscn" id="9_0bc6k"]
 [ext_resource type="Texture2D" uid="uid://ckks21v08e3yt" path="res://random bs/64x64 textures (45).png" id="10_0bc6k"]
 [ext_resource type="PackedScene" uid="uid://dj235hsrsienu" path="res://prefabs/bumper.tscn" id="11_v66k7"]
 [ext_resource type="PackedScene" uid="uid://dnunrw4do7sjn" path="res://prefabs/bat.tscn" id="12_44fbv"]
+[ext_resource type="PackedScene" uid="uid://td4w82fyhok8" path="res://prefabs/sword.tscn" id="14_l8r8p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf54y"]
 texture = ExtResource("1_wpp1k")
@@ -508,8 +513,8 @@ texture = ExtResource("1_wpp1k")
 [sub_resource type="TileSet" id="TileSet_0bc6k"]
 sources/0 = SubResource("TileSetAtlasSource_8qxkh")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xw1d"]
-size = Vector2(18, 14.125)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8r8p"]
+size = Vector2(18, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jp76l"]
 size = Vector2(11, 12.625)
@@ -520,6 +525,9 @@ size = Vector2(10, 14.25)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qxkh"]
 size = Vector2(12, 26.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xw1d"]
+size = Vector2(18, 30)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bc6k"]
 size = Vector2(29, 12.25)
 
@@ -528,6 +536,9 @@ font = ExtResource("2_jp76l")
 font_size = 35
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_0bc6k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gmpll"]
+size = Vector2(20, 14)
 
 [sub_resource type="Animation" id="Animation_8vfk2"]
 length = 1.7
@@ -817,7 +828,7 @@ script = ExtResource("3_nf54y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="traps and hazards collision boxes/spike1" unique_id=201342304]
 position = Vector2(262, 393)
-shape = SubResource("RectangleShape2D_4xw1d")
+shape = SubResource("RectangleShape2D_l8r8p")
 
 [node name="spike2" type="Area2D" parent="traps and hazards collision boxes" unique_id=1486133911]
 collision_mask = 3
@@ -848,7 +859,7 @@ collision_mask = 3
 script = ExtResource("3_nf54y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="traps and hazards collision boxes/spike5" unique_id=792669436]
-position = Vector2(278, 185)
+position = Vector2(278, 184)
 shape = SubResource("RectangleShape2D_4xw1d")
 
 [node name="spike6" type="Area2D" parent="traps and hazards collision boxes" unique_id=1972824028]
@@ -874,7 +885,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="player/CanvasLayer/UI" unique_id=49433392]
-position = Vector2(77, 48)
+position = Vector2(83, 48)
 scale = Vector2(2.34375, 2.046875)
 texture = ExtResource("6_44fbv")
 
@@ -969,7 +980,7 @@ texture_scale = 0.4
 
 [node name="PointLight2D3" type="PointLight2D" parent="lights for torches" unique_id=787761389]
 material = SubResource("CanvasItemMaterial_0bc6k")
-position = Vector2(269.99997, 346)
+position = Vector2(270, 345)
 scale = Vector2(5.526852, 5.2045913)
 color = Color(0.7361017, 0.4368535, 0.2045809, 1)
 energy = 10.61
@@ -979,7 +990,7 @@ texture_scale = 0.4
 
 [node name="PointLight2D4" type="PointLight2D" parent="lights for torches" unique_id=1531639609]
 material = SubResource("CanvasItemMaterial_0bc6k")
-position = Vector2(247, 214.00002)
+position = Vector2(247.00003, 214.00002)
 scale = Vector2(5.116208, 5.018555)
 color = Color(0.7361017, 0.4368535, 0.2045809, 1)
 energy = 7.7
@@ -1043,8 +1054,8 @@ collision_mask = 2
 script = ExtResource("3_nf54y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bats/bat/bat killbox" unique_id=1573266795]
-position = Vector2(347, 253.9375)
-shape = SubResource("RectangleShape2D_4xw1d")
+position = Vector2(347, 254)
+shape = SubResource("RectangleShape2D_gmpll")
 
 [node name="random bs" type="Node2D" parent="." unique_id=1534028822]
 
@@ -1066,6 +1077,9 @@ autoplay = &"flickererer"
 [node name="CanvasModulate" type="CanvasModulate" parent="random bs" unique_id=1281375564]
 position = Vector2(1, 0)
 color = Color(0.40705615, 0.40705618, 0.40705615, 1)
+
+[node name="sword" parent="random bs" unique_id=629509775 instance=ExtResource("14_l8r8p")]
+position = Vector2(308, 191)
 
 [connection signal="body_entered" from="traps and hazards collision boxes/spike1" to="traps and hazards collision boxes/spike1" method="_on_body_entered"]
 [connection signal="body_entered" from="traps and hazards collision boxes/spike2" to="traps and hazards collision boxes/spike2" method="_on_body_entered"]

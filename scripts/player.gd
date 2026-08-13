@@ -34,33 +34,34 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
  #this handles animation of the player when moving a direction
-	if not is_on_floor():
-		if velocity.y < 0:
-			jump_sound.play()
-			anim.animation = "jump"
+	if not has_sword:
+		if not is_on_floor():
+			if velocity.y < 0:
+				jump_sound.play()
+				anim.animation = "jump"
+			else:
+				anim.animation = "fall"
+
+		elif abs(velocity.x) > 0:
+			anim.animation = "run"
+
 		else:
-			anim.animation = "fall"
-
-	elif abs(velocity.x) > 0:
-		anim.animation = "run"
-
-	else:
-		anim.animation = "idle"
+			anim.animation = "idle"
 		
 	
 		
-		
-	#if not is_on_floor() and has_sword:
-		#if velocity.y < 0:
-			#anim.animation = "jump_sword"
-		#else:
-			#anim.animation = "fall_sword"
+	else:
+		if not is_on_floor():
+			if velocity.y < 0:
+				anim.animation = "jump_sword"
+			else:
+				anim.animation = "fall_sword"
 
-	#elif abs(velocity.x) > 0:
-		#anim.animation = "run_sword"
+		elif abs(velocity.x) > 0:
+			anim.animation = "run_sword"
 
-	#else:
-		#anim.animation = "idle_sword"
+		else:
+			anim.animation = "idle_sword"
 
 
 
@@ -70,7 +71,8 @@ func _physics_process(delta: float) -> void:
 
 func respawn():
 	position = start_position
-	
+	get_tree().reload_current_scene()
+
 
 	if Input.is_action_pressed("attack") and has_sword:
 		attacking = true
