@@ -1,14 +1,16 @@
 extends CharacterBody2D
 
 #variables and declarations
+var end_ladder = Vector2(345, 9)
 var has_sword = false
 var attacking = false
-var movespeed = 275
+const movespeed = 300
+const MvSpdDefault = 225
 @onready var anim = $AnimatedSprite2D
 @onready var jump_sound = $AudioStreamPlayer
 @onready var jump_land = $AudioStreamPlayer2
 var start_position = Vector2(464, 525)
-const SPEED = 225.0
+var SPEED = 225.0
 const JUMP_VELOCITY = -299.0
 
 func _physics_process(delta: float) -> void:
@@ -64,15 +66,20 @@ func _physics_process(delta: float) -> void:
 			anim.animation = "idle_sword"
 
 	if anim.animation == "run" and Input.is_action_pressed("sprint"):
-		
-			
+		SPEED = movespeed
+	else:
+		SPEED = MvSpdDefault
 
 	if position.y > 900:
 		position = start_position
 
 	if Input.is_action_pressed("attack") and has_sword:
 			attacking = true
-
+			
+func teleport():
+	position = end_ladder 
+	
+#handles respawn
 func respawn():
 	position = start_position
 	get_tree().reload_current_scene()

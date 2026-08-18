@@ -9,7 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 		collision_layer = 0
 		collision_mask = 0
 		$CollisionShape2D.disabled = true
-		Score.add_point(5)
+		Score.add_point(1)
 		coin_collect.play()
 		Sprite.play("collect",1.0,false)
 		print(Sprite.animation)
