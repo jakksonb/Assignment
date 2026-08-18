@@ -1305,7 +1305,11 @@ color = Color(0.40705615, 0.40705618, 0.40705615, 1)
 [node name="sword" parent="random bs" unique_id=629509775 instance=ExtResource("14_l8r8p")]
 position = Vector2(308, 191)
 
-[node name="ladder" parent="." unique_id=197434425 instance=ExtResource("15_gmpll")]
+[node name="ladder2" parent="." unique_id=197434425 instance=ExtResource("15_gmpll")]
+position = Vector2(460, 87)
+collision_mask = 3
+
+[node name="ladder" parent="." unique_id=1715058317 instance=ExtResource("15_gmpll")]
 position = Vector2(328, 94)
 collision_mask = 3
 
