@@ -7,6 +7,8 @@
 size = Vector2(16, 16)
 
 [node name="sword" type="Area2D" unique_id=629509775]
+collision_layer = 64
+collision_mask = 3
 script = ExtResource("1_ft5er")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=874659174]
@@ -16,3 +18,5 @@ texture = ExtResource("2_vqqhk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801099221]
 shape = SubResource("RectangleShape2D_l7m7y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
