@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		if not is_on_floor():
 			if velocity.y < 0:
+				jump_sound.play()
 				anim.animation = "jump_sword"
 			else:
 				anim.animation = "fall_sword"
@@ -64,7 +65,9 @@ func _physics_process(delta: float) -> void:
 
 		else:
 			anim.animation = "idle_sword"
-
+			
+	
+	
 	if anim.animation == "run" and Input.is_action_pressed("sprint"):
 		SPEED = movespeed
 	else:
@@ -76,6 +79,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("attack") and has_sword:
 			attacking = true
 			
+	if attacking:
+		anim.animation = "attack"
+		
 func teleport():
 	position = end_ladder 
 	
@@ -88,4 +94,17 @@ func respawn():
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if attacking:
-		attacking = false
+		if not is_on_floor():
+			if velocity.y < 0:
+				jump_sound.play()
+				anim.animation = "jump_sword"
+			else:
+				anim.animation = "fall_sword"
+
+		elif abs(velocity.x) > 0:
+			anim.animation = "run_sword"
+
+		else:
+			anim.animation = "idle_sword"
+		
+		

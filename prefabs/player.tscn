@@ -36,6 +36,10 @@ region = Rect2(192, 0, 64, 32)
 atlas = ExtResource("2_sd3sa")
 region = Rect2(256, 0, 64, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_sd3sa"]
+atlas = ExtResource("5_opo22")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7ghd"]
 atlas = ExtResource("2_g2jcq")
 region = Rect2(0, 0, 32, 32)
@@ -197,10 +201,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_e3k5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sd3sa")
 }],
 "loop": true,
 "name": &"attack",
-"speed": 5.0
+"speed": 9.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -361,7 +368,7 @@ shape = SubResource("RectangleShape2D_1txc5")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1654210250]
 position = Vector2(4.7683716e-07, 0)
 sprite_frames = SubResource("SpriteFrames_2wuci")
-animation = &"run_sword"
+animation = &"attack"
 autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=726053813]
