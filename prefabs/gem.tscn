@@ -169,6 +169,8 @@ animations = [{
 size = Vector2(9, 9)
 
 [node name="gem" type="Area2D" unique_id=1804812916]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_x6t6c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1077052315]
