@@ -18,7 +18,7 @@ func spawn_coins() -> void:
 		var new_coin = coin_scene.instantiate()
 		get_parent().call_deferred("add_child", new_coin)
 		new_coin.global_position = global_position
-		new_coin.global_position.x += randf_range(-20, 20)
+		new_coin.global_position.x += randf_range(-30, -10)
 		
 	
 		

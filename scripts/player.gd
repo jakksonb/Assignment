@@ -4,7 +4,7 @@ extends CharacterBody2D
 var end_ladder = Vector2(345, 9)
 var has_sword = false
 var attacking = false
-const movespeed = 300
+const movespeedsprint = 300
 const MvSpdDefault = 225
 @onready var anim = $AnimatedSprite2D
 @onready var jump_sound = $AudioStreamPlayer
@@ -51,7 +51,7 @@ func _physics_process(delta: float) -> void:
 			anim.animation = "idle"
 			
 	
-		
+	#handles the animation if player has a sword
 	else:
 		if not is_on_floor():
 			if velocity.y < 0:
@@ -67,12 +67,13 @@ func _physics_process(delta: float) -> void:
 			anim.animation = "idle_sword"
 			
 	
-	
-	if anim.animation == "run" and Input.is_action_pressed("sprint"):
-		SPEED = movespeed
+	#this adds a sprint mechanic to the player
+	if (anim.animation == "run" or anim.animation == "run_sword") and Input.is_action_pressed("sprint"):
+		SPEED = movespeedsprint
 	else:
 		SPEED = MvSpdDefault
 
+	#makes a pos for a respawn of the player
 	if position.y > 900:
 		position = start_position
 
@@ -82,6 +83,7 @@ func _physics_process(delta: float) -> void:
 	if attacking:
 		anim.animation = "attack"
 		
+#teleport func for when player hits a ladder
 func teleport():
 	position = end_ladder 
 	
@@ -92,19 +94,7 @@ func respawn():
 	
 
 
-func _on_animated_sprite_2d_animation_finished() -> void:
-	if attacking:
-		if not is_on_floor():
-			if velocity.y < 0:
-				jump_sound.play()
-				anim.animation = "jump_sword"
-			else:
-				anim.animation = "fall_sword"
 
-		elif abs(velocity.x) > 0:
-			anim.animation = "run_sword"
-
-		else:
-			anim.animation = "idle_sword"
+	
 		
 		
