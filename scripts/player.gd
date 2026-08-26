@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	# Movement
+	# handles movement
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -38,9 +38,9 @@ func _physics_process(delta: float) -> void:
  #this handles animation of the player when moving a direction
 	if not has_sword:
 		if not is_on_floor():
-			if velocity.y < 0:
-				jump_sound.play()
+			if velocity.y > 0:
 				anim.animation = "jump"
+				jump_sound.play()
 			else:
 				anim.animation = "fall"
 
@@ -55,8 +55,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		if not is_on_floor():
 			if velocity.y < 0:
-				jump_sound.play()
 				anim.animation = "jump_sword"
+				jump_sound.play()
 			else:
 				anim.animation = "fall_sword"
 

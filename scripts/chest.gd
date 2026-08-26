@@ -1,4 +1,5 @@
 extends Area2D
+
 const coin_scene = preload("res://prefabs/coin.tscn")
 @onready var Sprite = $AnimatedSprite2D
 @export var coin_count: int = 5
@@ -19,6 +20,7 @@ func spawn_coins() -> void:
 		get_parent().call_deferred("add_child", new_coin)
 		new_coin.global_position = global_position
 		new_coin.global_position.x += randf_range(-30, -10)
+	
 		
 	
 		

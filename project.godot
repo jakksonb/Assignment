@@ -13,11 +13,15 @@ config_version=5
 config/name="UNDER"
 run/main_scene="uid://brvcp7xlfia82"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://random bs/icon.svg"
+config/icon="res://random stuff/icon.svg"
 
 [autoload]
 
 Score="*uid://domrh1ut5aalt"
+
+[display]
+
+window/size/viewport_height=1600
 
 [input]
 

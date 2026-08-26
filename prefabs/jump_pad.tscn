@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ct2tqa544vi2p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_edx07"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sgole"]
+
+[node name="jump pad" type="Area2D" unique_id=2073050005]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=262761414]
+sprite_frames = SubResource("SpriteFrames_edx07")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1433810931]
+shape = SubResource("RectangleShape2D_sgole")

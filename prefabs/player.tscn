@@ -10,8 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://dc5qid120bfux" path="res://CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterNoSword/CharacterRunNoSword.png" id="5_rgeog"]
 [ext_resource type="Texture2D" uid="uid://cik4om7t5k10n" path="res://CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterJump.png" id="7_8rb0w"]
 [ext_resource type="Texture2D" uid="uid://b7aq4vhijxkjj" path="res://CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterRun.png" id="9_sd3sa"]
-[ext_resource type="AudioStream" uid="uid://bld88h8slbdwo" path="res://Minifantasy_Dungeon_SFX/12_human_jump_2.wav" id="10_opo22"]
 [ext_resource type="AudioStream" uid="uid://bqjtvcqcqodu7" path="res://Minifantasy_Dungeon_SFX/13_human_jump_land_2.wav" id="11_8rb0w"]
+[ext_resource type="AudioStream" uid="uid://ugq0jdu15425" path="res://random stuff/30_Jump_03.wav" id="11_sd3sa"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1txc5"]
 size = Vector2(14, 24)
@@ -375,7 +375,7 @@ autoplay = "idle"
 zoom = Vector2(2.5, 2.5)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2128037953]
-stream = ExtResource("10_opo22")
+stream = ExtResource("11_sd3sa")
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1430804786]
 stream = ExtResource("11_8rb0w")

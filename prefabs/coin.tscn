@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d2jnghdp3acxq"]
 
-[ext_resource type="Texture2D" uid="uid://cwg3bar08wrc0" path="res://random bs/Coin_tiles.png" id="1_8bk7x"]
+[ext_resource type="Texture2D" uid="uid://cwg3bar08wrc0" path="res://random stuff/Coin_tiles.png" id="1_8bk7x"]
 [ext_resource type="Script" uid="uid://c6igg41thuivw" path="res://scripts/coin.gd" id="1_h1t07"]
 [ext_resource type="Texture2D" uid="uid://b45otlgvcy1lr" path="res://Pixel Art Gem Pack - Animated/Pixel Art Gem Pack - Animated/Spark/Spark - Spritesheet.png" id="2_ab8qe"]
 [ext_resource type="AudioStream" uid="uid://dkcpymhri8wcm" path="res://Coin Sfx Pack/Retro Coin 2.mp3" id="4_1we67"]
@@ -158,5 +158,8 @@ shape = SubResource("RectangleShape2D_8bk7x")
 stream = ExtResource("4_1we67")
 volume_db = 4.522
 
+[node name="Timer" type="Timer" parent="." unique_id=1003946580]
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
