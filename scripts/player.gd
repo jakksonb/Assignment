@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name player
 
 #variables and declarations
 var end_ladder = Vector2(345, 9)
@@ -12,6 +13,8 @@ const MvSpdDefault = 225
 var start_position = Vector2(464, 525)
 var SPEED = 225.0
 const JUMP_VELOCITY = -299.0
+const jumppad_velocity = -450
+var health = 100
 
 func _physics_process(delta: float) -> void:
 	#handles gravity
@@ -91,6 +94,9 @@ func teleport():
 func respawn():
 	position = start_position
 	get_tree().reload_current_scene()
+	
+func up():
+	velocity.y = jumppad_velocity
 	
 
 

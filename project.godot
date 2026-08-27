@@ -19,10 +19,6 @@ config/icon="res://random stuff/icon.svg"
 
 Score="*uid://domrh1ut5aalt"
 
-[display]
-
-window/size/viewport_height=1600
-
 [input]
 
 left={

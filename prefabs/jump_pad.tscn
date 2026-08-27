@@ -1,13 +1,49 @@
 [gd_scene format=3 uid="uid://ct2tqa544vi2p"]
 
+[ext_resource type="Texture2D" uid="uid://c51li0x5lyu5f" path="res://random stuff/New Piskel-20260826-133044-frame0.png" id="1_sgole"]
+[ext_resource type="Script" uid="uid://ddrqnrjur5ixg" path="res://scripts/jump_pad.gd" id="1_xabne"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xabne"]
+atlas = ExtResource("1_sgole")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m7gt"]
+atlas = ExtResource("1_sgole")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avqsk"]
+atlas = ExtResource("1_sgole")
+region = Rect2(0, 32, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_edx07"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xabne")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m7gt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avqsk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sgole"]
+size = Vector2(12, 2)
 
 [node name="jump pad" type="Area2D" unique_id=2073050005]
+script = ExtResource("1_xabne")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=262761414]
 sprite_frames = SubResource("SpriteFrames_edx07")
+frame_progress = 0.06342657
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1433810931]
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_sgole")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
