@@ -15,6 +15,7 @@ var SPEED = 225.0
 const JUMP_VELOCITY = -299.0
 const jumppad_velocity = -450
 var health = 100
+var stamina = 100
 
 func _physics_process(delta: float) -> void:
 	#handles gravity

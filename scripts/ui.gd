@@ -1,9 +1,10 @@
 extends Control
 
 @onready var player = $"../../"
+@onready var stamina = $stamina
 @onready var health = $health
 
-
+#stamina and health
 func _process(delta: float) -> void:
 	if player.health == 100:
 		health.frame = 0
@@ -17,3 +18,4 @@ func _process(delta: float) -> void:
 		if player.health == 0:
 			health.frame = 4
 			player.respawn()
+			
