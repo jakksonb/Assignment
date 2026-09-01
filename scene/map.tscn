@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://c4pcvw0qfc3bd" path="res://prefabs/moving_spikes.tscn" id="19_amuei"]
 [ext_resource type="Script" uid="uid://bmq7j4ag36q8i" path="res://scripts/moving_spikes.gd" id="20_yqoch"]
 [ext_resource type="PackedScene" uid="uid://ct2tqa544vi2p" path="res://prefabs/jump_pad.tscn" id="21_3fel5"]
+[ext_resource type="PackedScene" uid="uid://dxb14fdxa17au" path="res://prefabs/moving_platform.tscn" id="23_lfekj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf54y"]
 texture = ExtResource("1_wpp1k")
@@ -1201,7 +1202,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../moving spikes:position")
+tracks/0/path = NodePath("../moving spikes/moving spike:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -1210,28 +1211,56 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(248, 395)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../moving spikes/moving spike2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(373, -240)]
+}
 
 [sub_resource type="Animation" id="Animation_yqoch"]
 resource_name = "moving spike"
-length = 1.6
+length = 1.3666667
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../moving spikes:position")
+tracks/0/path = NodePath("../moving spikes/moving spike:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.39999998, 1.1666666),
+"times": PackedFloat32Array(0.33333334, 1.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(248, 396), Vector2(300, 396)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../moving spikes/moving spike2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(373, -240), Vector2(373, -192)]
+}
+
+[sub_resource type="Animation" id="Animation_lfekj"]
+resource_name = "moving spike2"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3fel5"]
 _data = {
 &"RESET": SubResource("Animation_amuei"),
-&"moving spike": SubResource("Animation_yqoch")
+&"moving spike": SubResource("Animation_yqoch"),
+&"moving spike2": SubResource("Animation_lfekj")
 }
 
 [node name="map" type="Node2D" unique_id=1222933388]
@@ -1333,7 +1362,7 @@ position = Vector2(438, 66)
 shape = SubResource("RectangleShape2D_l8r8p")
 
 [node name="player" parent="." unique_id=260363613 instance=ExtResource("6_bq37x")]
-position = Vector2(465, 536)
+position = Vector2(247, 130)
 collision_layer = 2
 collision_mask = 229
 
@@ -1395,6 +1424,10 @@ collision_mask = 3
 position = Vector2(241, 266)
 collision_mask = 3
 
+[node name="gem2" parent="gems" unique_id=2021446427 instance=ExtResource("8_7ac5c")]
+position = Vector2(364, -153)
+collision_mask = 3
+
 [node name="torches" type="Node2D" parent="." unique_id=1408648458]
 
 [node name="torch" parent="torches" unique_id=186190142 instance=ExtResource("9_0bc6k")]
@@ -1452,7 +1485,7 @@ texture_scale = 0.4
 [node name="PointLight2D2" type="PointLight2D" parent="lights for torches" unique_id=694732692]
 material = SubResource("CanvasItemMaterial_0bc6k")
 position = Vector2(282, 472)
-scale = Vector2(5.871, 5.0781245)
+scale = Vector2(5.116208, 5.018555)
 color = Color(0.7361017, 0.4368535, 0.2045809, 1)
 energy = 5.8
 shadow_enabled = true
@@ -1531,6 +1564,31 @@ position = Vector2(404, 251)
 collision_layer = 8
 collision_mask = 16
 
+[node name="moving platforms" type="Node2D" parent="." unique_id=944623487]
+
+[node name="moving_platform" parent="moving platforms" unique_id=1367644276 instance=ExtResource("23_lfekj")]
+position = Vector2(357, -16)
+
+[node name="moving_platform2" parent="moving platforms" unique_id=414578130 instance=ExtResource("23_lfekj")]
+position = Vector2(270, -56)
+
+[node name="moving_platform3" parent="moving platforms" unique_id=1552251272 instance=ExtResource("23_lfekj")]
+position = Vector2(447, -59)
+
+[node name="moving_platform4" parent="moving platforms" unique_id=530270714 instance=ExtResource("23_lfekj")]
+position = Vector2(358, -107)
+
+[node name="moving spikes" type="Node2D" parent="." unique_id=589265272]
+
+[node name="moving spike" parent="moving spikes" unique_id=367851711 instance=ExtResource("19_amuei")]
+position = Vector2(248, 395)
+script = ExtResource("20_yqoch")
+
+[node name="moving spike2" parent="moving spikes" unique_id=1002638543 instance=ExtResource("19_amuei")]
+position = Vector2(373, -240)
+rotation = 1.5707964
+script = ExtResource("20_yqoch")
+
 [node name="bats" type="Node2D" parent="." unique_id=1660615690]
 
 [node name="bat" parent="bats" unique_id=2129195820 instance=ExtResource("12_44fbv")]
@@ -1548,51 +1606,50 @@ script = ExtResource("3_nf54y")
 position = Vector2(347, 254)
 shape = SubResource("RectangleShape2D_gmpll")
 
-[node name="random bs" type="Node2D" parent="." unique_id=1534028822]
+[node name="other assets" type="Node2D" parent="." unique_id=1534028822]
 
-[node name="animation for lights" type="Node2D" parent="random bs" unique_id=1700098032]
+[node name="animation for lights" type="Node2D" parent="other assets" unique_id=1700098032]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="random bs/animation for lights" unique_id=1013157508]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="other assets/animation for lights" unique_id=1013157508]
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_44fbv")
 autoplay = &"flicker"
 
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="random bs/animation for lights" unique_id=422585672]
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="other assets/animation for lights" unique_id=422585672]
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_8vfk2")
 autoplay = &"flickerr"
 
-[node name="AnimationPlayer3" type="AnimationPlayer" parent="random bs/animation for lights" unique_id=946839137]
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="other assets/animation for lights" unique_id=946839137]
 root_node = NodePath("../../..")
 libraries/ = SubResource("AnimationLibrary_l8r8p")
 autoplay = &"flickererer"
 
-[node name="moving spikes" type="AnimationPlayer" parent="random bs" unique_id=1004477983]
+[node name="moving spikes" type="Node2D" parent="other assets" unique_id=1343344074]
+
+[node name="moving spikes" type="AnimationPlayer" parent="other assets/moving spikes" unique_id=1004477983]
+root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_3fel5")
 autoplay = &"moving spike"
 
-[node name="CanvasModulate" type="CanvasModulate" parent="random bs" unique_id=1281375564]
+[node name="CanvasModulate" type="CanvasModulate" parent="other assets" unique_id=1281375564]
 position = Vector2(1, 0)
 color = Color(0.40705615, 0.40705618, 0.40705615, 1)
 
-[node name="ladder" parent="." unique_id=1715058317 instance=ExtResource("15_gmpll")]
+[node name="ladder" parent="other assets" unique_id=1715058317 instance=ExtResource("15_gmpll")]
 position = Vector2(328, 94)
 collision_mask = 3
 
-[node name="chest" parent="." unique_id=632980030 instance=ExtResource("16_4m74h")]
+[node name="chest" parent="other assets" unique_id=632980030 instance=ExtResource("16_4m74h")]
 position = Vector2(513, 89)
 collision_layer = 4
 collision_mask = 2
 
-[node name="sword" parent="." unique_id=629509775 instance=ExtResource("14_l8r8p")]
+[node name="sword" parent="other assets" unique_id=629509775 instance=ExtResource("14_l8r8p")]
 position = Vector2(331, 189)
 collision_mask = 2
 
-[node name="moving spikes" parent="." unique_id=367851711 instance=ExtResource("19_amuei")]
-position = Vector2(248, 395)
-script = ExtResource("20_yqoch")
-
-[node name="jump pad" parent="." unique_id=2073050005 instance=ExtResource("21_3fel5")]
+[node name="jump pad" parent="other assets" unique_id=2073050005 instance=ExtResource("21_3fel5")]
 position = Vector2(450, 97)
 collision_mask = 2
 
@@ -1603,5 +1660,6 @@ collision_mask = 2
 [connection signal="body_entered" from="traps and hazards collision boxes/spike6" to="traps and hazards collision boxes/spike6" method="_on_body_entered"]
 [connection signal="body_entered" from="traps and hazards collision boxes/spike7" to="traps and hazards collision boxes/spike7" method="_on_body_entered"]
 [connection signal="body_entered" from="traps and hazards collision boxes/spike8" to="traps and hazards collision boxes/spike8" method="_on_body_entered"]
+[connection signal="body_entered" from="moving spikes/moving spike" to="moving spikes/moving spike" method="_on_body_entered"]
+[connection signal="body_entered" from="moving spikes/moving spike2" to="moving spikes/moving spike2" method="_on_body_entered"]
 [connection signal="body_entered" from="bats/bat/bat killbox" to="bats/bat/bat killbox" method="_on_body_entered"]
-[connection signal="body_entered" from="moving spikes" to="moving spikes" method="_on_body_entered"]

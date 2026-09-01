@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dxb14fdxa17au"]
+
+[ext_resource type="Texture2D" uid="uid://btmhqklt287qd" path="res://CastleDungeonPackv3/CastleDungeonPackv3/Tileset/Tileset.png" id="1_ah4pd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ah4pd"]
+size = Vector2(48, 16)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=2053718864]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1604951445]
+texture = ExtResource("1_ah4pd")
+region_enabled = true
+region_rect = Rect2(0, 96.04572, 31.507362, 15.959106)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=542363598]
+position = Vector2(24, 0)
+texture = ExtResource("1_ah4pd")
+region_enabled = true
+region_rect = Rect2(0, 112.41114, 16.593208, 16.081108)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1129461320]
+position = Vector2(8, 0)
+texture = ExtResource("1_ah4pd")
+region_enabled = true
+region_rect = Rect2(80.583176, 80.64932, 46.763283, 15.587761)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1270838962]
+position = Vector2(8, 0)
+shape = SubResource("RectangleShape2D_ah4pd")
