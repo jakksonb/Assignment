@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name player
 
 #variables and declarations
+var double_jump = false
 var end_ladder = Vector2(345, 9)
 var has_sword = false
 var attacking = false
@@ -16,6 +17,8 @@ const JUMP_VELOCITY = -300
 const jumppad_velocity = -450
 var health = 100
 var stamina = 100
+const max_stamina = 100
+const min_stamina = 0
 var jump_count = 0
 var max_jumps = 2
 
@@ -26,11 +29,23 @@ func _physics_process(delta: float) -> void:
 
 	if is_on_floor():
 		jump_count = 0
+		double_jump = false
 	
-	#handles player jumping
 	if Input.is_action_just_pressed("jump") and jump_count < max_jumps:
 		velocity.y = JUMP_VELOCITY
 		jump_count += 1
+	
+		
+		
+	if jump_count == 2 and not double_jump and stamina >= 50:
+		stamina -= 50.5
+		double_jump = true
+		print(stamina)
+		
+	if stamina <= 0:
+		double_jump = false
+		
+		
 	# handles movement
 	var direction := Input.get_axis("left", "right")
 	if direction:
@@ -77,6 +92,7 @@ func _physics_process(delta: float) -> void:
 			
 	
 	#this adds a sprint mechanic to the player
+func sprintyes():
 	if (anim.animation == "run" or anim.animation == "run_sword") and Input.is_action_pressed("sprint"):
 		SPEED = movespeedsprint
 	else:
@@ -87,7 +103,7 @@ func _physics_process(delta: float) -> void:
 		position = start_position
 
 	if Input.is_action_pressed("attack") and has_sword:
-			attacking = true
+		attacking = true
 			
 	if attacking:
 		anim.animation = "attack"
@@ -104,9 +120,31 @@ func respawn():
 func up():
 	velocity.y = jumppad_velocity
 	
+func sprintno():
+	SPEED = MvSpdDefault
+	
+	
 
+func _process(delta):
+	if Input.is_action_pressed("sprint") and stamina >= min_stamina:
+		stamina -= 0.5
+		print(stamina)
+		
+	if not Input.is_action_pressed("sprint") and stamina < max_stamina and is_on_floor():
+		stamina += 0.5
+	
+	if stamina < min_stamina:
+		stamina = min_stamina
+	
+	if stamina > 0:
+		sprintyes()
+	elif stamina <= 0:
+		sprintno()
+		
+		
+		
+	
+	
 
-
-	#hello there
 		
 		

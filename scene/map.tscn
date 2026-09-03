@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cymhcgpo553lt" path="res://prefabs/gem.tscn" id="8_7ac5c"]
 [ext_resource type="PackedScene" uid="uid://de27ggbyjkji8" path="res://prefabs/torch.tscn" id="9_0bc6k"]
 [ext_resource type="Texture2D" uid="uid://ckks21v08e3yt" path="res://random stuff/64x64 textures (45).png" id="10_0bc6k"]
+[ext_resource type="Texture2D" uid="uid://coeyob477hpuj" path="res://random stuff/gallery_25428_6_46577.png" id="11_d6soc"]
 [ext_resource type="PackedScene" uid="uid://dj235hsrsienu" path="res://prefabs/bumper.tscn" id="11_v66k7"]
 [ext_resource type="PackedScene" uid="uid://dnunrw4do7sjn" path="res://prefabs/bat.tscn" id="12_44fbv"]
 [ext_resource type="PackedScene" uid="uid://td4w82fyhok8" path="res://prefabs/sword.tscn" id="14_l8r8p"]
@@ -877,26 +878,6 @@ region = Rect2(0, 16, 64, 16)
 atlas = ExtResource("18_ui0ov")
 region = Rect2(64, 16, 64, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oegkd"]
-atlas = ExtResource("18_ui0ov")
-region = Rect2(64, 16, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t1uoc"]
-atlas = ExtResource("18_ui0ov")
-region = Rect2(0, 16, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fecvx"]
-atlas = ExtResource("18_ui0ov")
-region = Rect2(128, 0, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ok7wf"]
-atlas = ExtResource("18_ui0ov")
-region = Rect2(64, 0, 64, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_la8v5"]
-atlas = ExtResource("18_ui0ov")
-region = Rect2(0, 0, 64, 16)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_6ctjw"]
 animations = [{
 "frames": [{
@@ -917,26 +898,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"energy_deplete",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oegkd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t1uoc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fecvx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ok7wf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_la8v5")
-}],
-"loop": true,
-"name": &"energy_replenish",
 "speed": 5.0
 }]
 
@@ -1330,8 +1291,13 @@ _data = {
 &"moving spike2": SubResource("Animation_lfekj")
 }
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d6soc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uhta6"]
+size = Vector2(13.5, 33)
+
 [node name="map" type="Node2D" unique_id=1222933388]
-position = Vector2(-1, 0)
+texture_filter = 1
 
 [node name="tile maps" type="Node2D" parent="." unique_id=1065545897]
 texture_filter = 1
@@ -1429,7 +1395,7 @@ position = Vector2(438, 66)
 shape = SubResource("RectangleShape2D_l8r8p")
 
 [node name="player" parent="." unique_id=260363613 instance=ExtResource("6_bq37x")]
-position = Vector2(476, 533)
+position = Vector2(487, 533)
 collision_layer = 2
 collision_mask = 229
 
@@ -1476,6 +1442,8 @@ text = "0
 label_settings = SubResource("LabelSettings_7ac5c")
 
 [node name="Sprite2D2" type="Sprite2D" parent="player/CanvasLayer/UI" unique_id=183893312]
+visible = false
+texture = ExtResource("11_d6soc")
 
 [node name="coins" type="Node2D" parent="." unique_id=1402166213]
 
@@ -1537,6 +1505,16 @@ frame_progress = 0.58645093
 [node name="torch8" parent="torches" unique_id=386668931 instance=ExtResource("9_0bc6k")]
 light_mask = 0
 position = Vector2(536, -16)
+frame_progress = 0.58645093
+
+[node name="torch9" parent="torches" unique_id=1270207448 instance=ExtResource("9_0bc6k")]
+light_mask = 0
+position = Vector2(280, -113)
+frame_progress = 0.58645093
+
+[node name="torch10" parent="torches" unique_id=486918971 instance=ExtResource("9_0bc6k")]
+light_mask = 0
+position = Vector2(432, -56)
 frame_progress = 0.58645093
 
 [node name="lights for torches" type="Node2D" parent="." unique_id=2132882654]
@@ -1615,6 +1593,26 @@ texture_scale = 0.4
 material = SubResource("CanvasItemMaterial_0bc6k")
 position = Vector2(536.00024, -17)
 scale = Vector2(5.116, 4.923)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 7.7
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
+[node name="PointLight2D9" type="PointLight2D" parent="lights for torches" unique_id=69117965]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(432, -58.4928)
+scale = Vector2(5.116, 5.0396247)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 7.7
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
+[node name="PointLight2D10" type="PointLight2D" parent="lights for torches" unique_id=214725672]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(280.00024, -115.492805)
+scale = Vector2(5.116, 5.0396247)
 color = Color(0.7361017, 0.4368535, 0.2045809, 1)
 energy = 7.7
 shadow_enabled = true
@@ -1727,6 +1725,14 @@ collision_mask = 2
 [node name="jump pad" parent="other assets" unique_id=2073050005 instance=ExtResource("21_3fel5")]
 position = Vector2(450, 97)
 collision_mask = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="other assets" unique_id=1696043960]
+collision_mask = 2
+physics_material_override = SubResource("PhysicsMaterial_d6soc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="other assets/StaticBody2D" unique_id=1641577544]
+position = Vector2(264, 188)
+shape = SubResource("RectangleShape2D_uhta6")
 
 [connection signal="body_entered" from="traps and hazards collision boxes/spike2" to="traps and hazards collision boxes/spike2" method="_on_body_entered"]
 [connection signal="body_entered" from="traps and hazards collision boxes/spike3" to="traps and hazards collision boxes/spike3" method="_on_body_entered"]

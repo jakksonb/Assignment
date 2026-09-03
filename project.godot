@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="UNDER"
+config/description="This is a work in progress game for my Digital Technologies class assessment. Planning on making this a personal project after the assessment is done if I can. Credits to Xavier King for helping me lots with the coding in this project."
 run/main_scene="uid://brvcp7xlfia82"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://random stuff/icon.svg"

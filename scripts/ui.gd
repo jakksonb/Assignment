@@ -17,6 +17,8 @@ func _process(delta: float) -> void:
 	elif player.stamina == 0:
 		stamina.frame = 4
 		
+	
+		
 	if player.health == 100:
 		health.frame = 0
 	elif player.health == 75:
