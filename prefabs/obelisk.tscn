@@ -1,0 +1,109 @@
+[gd_scene format=3 uid="uid://xb0gmewbulcg"]
+
+[ext_resource type="Texture2D" uid="uid://dyjlpu0sxpqbb" path="res://FlyingObelisk_Simple/FlyingObelisk_no_lightnings_no_letter.png" id="1_hvqf1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a54gr"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(0, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ddw7"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(200, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_66jpb"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(400, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws5to"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(600, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq76y"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(800, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5s1u8"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(1000, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7qw42"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(1200, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6u0lm"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(1400, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udr8l"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(1600, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1g50v"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(1800, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3sa4h"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(2000, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ar0ta"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(2200, 0, 200, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2btbk"]
+atlas = ExtResource("1_hvqf1")
+region = Rect2(2400, 0, 200, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6gl8n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a54gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ddw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_66jpb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws5to")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq76y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5s1u8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7qw42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6u0lm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udr8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1g50v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3sa4h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ar0ta")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2btbk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 11.0
+}]
+
+[node name="obelisk" type="Area2D" unique_id=1627933568]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1364972448]
+sprite_frames = SubResource("SpriteFrames_6gl8n")
+animation = &"idle"
+frame_progress = 0.11451947
