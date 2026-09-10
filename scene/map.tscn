@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://c4pcvw0qfc3bd" path="res://prefabs/moving_spikes.tscn" id="19_amuei"]
 [ext_resource type="Script" uid="uid://bmq7j4ag36q8i" path="res://scripts/moving_spikes.gd" id="20_yqoch"]
 [ext_resource type="PackedScene" uid="uid://ct2tqa544vi2p" path="res://prefabs/jump_pad.tscn" id="21_3fel5"]
+[ext_resource type="PackedScene" uid="uid://xb0gmewbulcg" path="res://prefabs/obelisk.tscn" id="21_uhta6"]
+[ext_resource type="PackedScene" uid="uid://be2yitja2lybe" path="res://prefabs/obelisk_destroy.tscn" id="22_ewrs0"]
 [ext_resource type="PackedScene" uid="uid://dxb14fdxa17au" path="res://prefabs/moving_platform.tscn" id="23_lfekj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf54y"]
@@ -1477,7 +1479,7 @@ position = Vector2(438, 66)
 shape = SubResource("RectangleShape2D_l8r8p")
 
 [node name="player" parent="." unique_id=260363613 instance=ExtResource("6_bq37x")]
-position = Vector2(500, 535)
+position = Vector2(372, -379)
 collision_layer = 2
 collision_mask = 229
 
@@ -1864,6 +1866,14 @@ autoplay = &"moving spike"
 [node name="CanvasModulate" type="CanvasModulate" parent="other assets" unique_id=1281375564]
 position = Vector2(1, 0)
 color = Color(0.40705615, 0.40705618, 0.40705615, 1)
+
+[node name="obelisks" type="Node2D" parent="other assets" unique_id=1444162150]
+
+[node name="obelisk" parent="other assets/obelisks" unique_id=2109583079 instance=ExtResource("21_uhta6")]
+position = Vector2(524, -391)
+
+[node name="obelisk_destroy" parent="other assets/obelisks" unique_id=1942954298 instance=ExtResource("22_ewrs0")]
+position = Vector2(467, -391)
 
 [node name="ladder" parent="other assets" unique_id=1715058317 instance=ExtResource("15_gmpll")]
 position = Vector2(328, 94)

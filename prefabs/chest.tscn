@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dcpur0qkwcuy6"]
 
-[ext_resource type="Texture2D" uid="uid://dslqf46aoqhov" path="res://Animated Chests/Animated Chests/Chests.png" id="1_7lya3"]
+[ext_resource type="Texture2D" uid="uid://dslqf46aoqhov" path="res://assets/Animated Chests/Animated Chests/Chests.png" id="1_7lya3"]
 [ext_resource type="Script" uid="uid://7gdq5vkpq00n" path="res://scripts/chest.gd" id="1_c347f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c347f"]
