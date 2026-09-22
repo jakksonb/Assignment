@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://be2yitja2lybe"]
 
 [ext_resource type="Script" uid="uid://qxpqpd48i478" path="res://scripts/obelisk_destroy.gd" id="1_meyhv"]
-[ext_resource type="Texture2D" uid="uid://6lqkd7bwiehl" path="res://FlyingObelisk_Full_v2/FlyingObelisk_lightnings_letter.png" id="2_o016x"]
-[ext_resource type="Texture2D" uid="uid://b2a1pd7tyqd3y" path="res://FlyingObelisk_Full_v2/FlyingObelisk_Destruction.png" id="3_vft5u"]
-[ext_resource type="Texture2D" uid="uid://dwu6t5t3rugj" path="res://FlyingObelisk_Full_v2/FlyingObelisk_no_lightnings_letter.png" id="4_tayf7"]
+[ext_resource type="Texture2D" uid="uid://6lqkd7bwiehl" path="res://assets/FlyingObelisk_Full_v2/FlyingObelisk_lightnings_letter.png" id="2_o016x"]
+[ext_resource type="Texture2D" uid="uid://b2a1pd7tyqd3y" path="res://assets/FlyingObelisk_Full_v2/FlyingObelisk_Destruction.png" id="3_vft5u"]
+[ext_resource type="Texture2D" uid="uid://dwu6t5t3rugj" path="res://assets/FlyingObelisk_Full_v2/FlyingObelisk_no_lightnings_letter.png" id="4_tayf7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oq76y"]
 atlas = ExtResource("2_o016x")

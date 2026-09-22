@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c4pcvw0qfc3bd"]
 
-[ext_resource type="Texture2D" uid="uid://btmhqklt287qd" path="res://CastleDungeonPackv3/CastleDungeonPackv3/Tileset/Tileset.png" id="1_pvwte"]
+[ext_resource type="Texture2D" uid="uid://btmhqklt287qd" path="res://assets/CastleDungeonPackv3/CastleDungeonPackv3/Tileset/Tileset.png" id="1_pvwte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1427m"]
 size = Vector2(10.1875, 24.0625)

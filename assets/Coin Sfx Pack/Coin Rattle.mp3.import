@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xtyiertbpxrc"
+path="res://.godot/imported/Coin Rattle.mp3-31ced51e2270b01b6cec800a39df88f9.mp3str"
+
+[deps]
+
+source_file="res://assets/Coin Sfx Pack/Coin Rattle.mp3"
+dest_files=["res://.godot/imported/Coin Rattle.mp3-31ced51e2270b01b6cec800a39df88f9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

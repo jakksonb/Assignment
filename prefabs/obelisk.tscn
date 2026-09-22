@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://xb0gmewbulcg"]
 
-[ext_resource type="Texture2D" uid="uid://6lqkd7bwiehl" path="res://FlyingObelisk_Full_v2/FlyingObelisk_lightnings_letter.png" id="1_0ddw7"]
-[ext_resource type="Script" uid="uid://bhqyrsc22gdxy" path="res://scripts/sword.gd" id="1_66jpb"]
-[ext_resource type="Texture2D" uid="uid://b2a1pd7tyqd3y" path="res://FlyingObelisk_Full_v2/FlyingObelisk_Destruction.png" id="2_66jpb"]
-[ext_resource type="Texture2D" uid="uid://dwu6t5t3rugj" path="res://FlyingObelisk_Full_v2/FlyingObelisk_no_lightnings_letter.png" id="3_ws5to"]
+[ext_resource type="Texture2D" uid="uid://6lqkd7bwiehl" path="res://assets/FlyingObelisk_Full_v2/FlyingObelisk_lightnings_letter.png" id="1_0ddw7"]
+[ext_resource type="Script" uid="uid://dmok2sye7pqbg" path="res://scripts/obelisk.gd" id="1_66jpb"]
+[ext_resource type="Texture2D" uid="uid://b2a1pd7tyqd3y" path="res://assets/FlyingObelisk_Full_v2/FlyingObelisk_Destruction.png" id="2_66jpb"]
+[ext_resource type="Texture2D" uid="uid://dwu6t5t3rugj" path="res://assets/FlyingObelisk_Full_v2/FlyingObelisk_no_lightnings_letter.png" id="3_ws5to"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oq76y"]
 atlas = ExtResource("1_0ddw7")
@@ -328,14 +328,16 @@ animations = [{
 size = Vector2(12, 48)
 
 [node name="obelisk" type="Area2D" unique_id=2109583079]
+collision_mask = 2
 script = ExtResource("1_66jpb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=800388798]
 scale = Vector2(0.19125, 0.17125)
 sprite_frames = SubResource("SpriteFrames_t1gcn")
-animation = &"idle"
+animation = &"activated"
 autoplay = "idle"
-frame_progress = 0.14978851
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=763379168]
 shape = SubResource("RectangleShape2D_0pfyh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

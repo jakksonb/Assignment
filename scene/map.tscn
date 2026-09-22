@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://brvcp7xlfia82"]
 
 [ext_resource type="Script" uid="uid://cr1ldv40isett" path="res://scripts/canvas_layer.gd" id="1_bq37x"]
-[ext_resource type="Texture2D" uid="uid://btmhqklt287qd" path="res://CastleDungeonPackv3/CastleDungeonPackv3/Tileset/Tileset.png" id="1_wpp1k"]
+[ext_resource type="Texture2D" uid="uid://btmhqklt287qd" path="res://assets/CastleDungeonPackv3/CastleDungeonPackv3/Tileset/Tileset.png" id="1_wpp1k"]
 [ext_resource type="Texture2D" uid="uid://hxfvw08vgfyk" path="res://random stuff/Dungeon Tile Set.png" id="2_8qxkh"]
 [ext_resource type="FontFile" uid="uid://d1u4mxup5ev2c" path="res://random stuff/m5x7.ttf" id="2_jp76l"]
 [ext_resource type="Script" uid="uid://cjbykojvhq7er" path="res://scripts/spike_1.gd" id="3_nf54y"]
@@ -18,8 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://td4w82fyhok8" path="res://prefabs/sword.tscn" id="14_l8r8p"]
 [ext_resource type="PackedScene" uid="uid://dkuy5m2x17b04" path="res://prefabs/ladder.tscn" id="15_gmpll"]
 [ext_resource type="PackedScene" uid="uid://dcpur0qkwcuy6" path="res://prefabs/chest.tscn" id="16_4m74h"]
-[ext_resource type="Texture2D" uid="uid://dxukoclhudma7" path="res://Pixel Bar Starter Pack/Pixel Bar Starter Pack/7-Health_Bar_Red(Sheet).png" id="17_bachi"]
-[ext_resource type="Texture2D" uid="uid://c0o68ii3k857r" path="res://Pixel Bar Starter Pack/Pixel Bar Starter Pack/10-StaminBar_Yellow(Sheet).png" id="18_ui0ov"]
+[ext_resource type="Texture2D" uid="uid://dxukoclhudma7" path="res://assets/Pixel Bar Starter Pack/Pixel Bar Starter Pack/7-Health_Bar_Red(Sheet).png" id="17_bachi"]
+[ext_resource type="Texture2D" uid="uid://c0o68ii3k857r" path="res://assets/Pixel Bar Starter Pack/Pixel Bar Starter Pack/10-StaminBar_Yellow(Sheet).png" id="18_ui0ov"]
 [ext_resource type="PackedScene" uid="uid://c4pcvw0qfc3bd" path="res://prefabs/moving_spikes.tscn" id="19_amuei"]
 [ext_resource type="Script" uid="uid://bmq7j4ag36q8i" path="res://scripts/moving_spikes.gd" id="20_yqoch"]
 [ext_resource type="PackedScene" uid="uid://ct2tqa544vi2p" path="res://prefabs/jump_pad.tscn" id="21_3fel5"]
@@ -975,7 +975,7 @@ tracks/1/path = NodePath("../../moving platforms/moving_platform2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.76666665, 1.3),
+"times": PackedFloat32Array(0.53333336, 1.0666667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(243, -59), Vector2(305, -59)]
@@ -999,9 +999,36 @@ _data = {
 &"moce": SubResource("Animation_uhta6")
 }
 
+[sub_resource type="Animation" id="Animation_d60jh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../moving platforms/moving_platform7:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(419, -111)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../moving platforms/moving_platform8:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(453, -158)]
+}
+
 [sub_resource type="Animation" id="Animation_ewrs0"]
 resource_name = "mocing"
-length = 1.9666667
+length = 2.0
 loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -1010,15 +1037,102 @@ tracks/0/path = NodePath("../../moving platforms/moving_platform6:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.46666667, 1.6333333),
+"times": PackedFloat32Array(0.4667, 1.6333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(299, -141), Vector2(299, -228)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../moving platforms/moving_platform7:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.7333, 1.4667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(420, -103), Vector2(512, -103)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../moving platforms/moving_platform8:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.5, 1.3667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(452, -147), Vector2(452, -232)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d60jh"]
 _data = {
+&"RESET": SubResource("Animation_d60jh"),
 &"mocing": SubResource("Animation_ewrs0")
+}
+
+[sub_resource type="Animation" id="Animation_i8ww0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../moving platforms/moving_platform9:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(282, -274)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../moving platforms/moving_platform10:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(398, -263)]
+}
+
+[sub_resource type="Animation" id="Animation_6ctjw"]
+resource_name = "mocer"
+length = 1.4333333
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../moving platforms/moving_platform9:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.46666667, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(282, -274), Vector2(282, -350)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../moving platforms/moving_platform10:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.23333333, 1.1666666),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(398, -263), Vector2(311, -331)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xkx26"]
+_data = {
+&"RESET": SubResource("Animation_i8ww0"),
+&"mocer": SubResource("Animation_6ctjw")
 }
 
 [sub_resource type="Animation" id="Animation_8vfk2"]
@@ -1479,7 +1593,7 @@ position = Vector2(438, 66)
 shape = SubResource("RectangleShape2D_l8r8p")
 
 [node name="player" parent="." unique_id=260363613 instance=ExtResource("6_bq37x")]
-position = Vector2(372, -379)
+position = Vector2(365, -373)
 collision_layer = 2
 collision_mask = 229
 
@@ -1609,6 +1723,26 @@ light_mask = 0
 position = Vector2(432, -56)
 frame_progress = 0.58645093
 
+[node name="torch11" parent="torches" unique_id=1446242794 instance=ExtResource("9_0bc6k")]
+light_mask = 0
+position = Vector2(490, 329)
+frame_progress = 0.58645093
+
+[node name="torch12" parent="torches" unique_id=200428296 instance=ExtResource("9_0bc6k")]
+light_mask = 0
+position = Vector2(245, 17)
+frame_progress = 0.58645093
+
+[node name="torch13" parent="torches" unique_id=1831466817 instance=ExtResource("9_0bc6k")]
+light_mask = 0
+position = Vector2(258, -272)
+frame_progress = 0.58645093
+
+[node name="torch14" parent="torches" unique_id=430160819 instance=ExtResource("9_0bc6k")]
+light_mask = 0
+position = Vector2(418, -216)
+frame_progress = 0.58645093
+
 [node name="lights for torches" type="Node2D" parent="." unique_id=2132882654]
 
 [node name="PointLight2D" type="PointLight2D" parent="lights for torches" unique_id=1094464861]
@@ -1711,6 +1845,46 @@ shadow_enabled = true
 texture = ExtResource("10_0bc6k")
 texture_scale = 0.4
 
+[node name="PointLight2D11" type="PointLight2D" parent="lights for torches" unique_id=876055915]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(490.00024, 328)
+scale = Vector2(5.116, 4.923)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 7.7
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
+[node name="PointLight2D12" type="PointLight2D" parent="lights for torches" unique_id=1043246538]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(245, 16)
+scale = Vector2(5.116, 4.829)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 7.7
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
+[node name="PointLight2D13" type="PointLight2D" parent="lights for torches" unique_id=564327177]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(257.99997, -272.99997)
+scale = Vector2(5.116, 5.116)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 7.7
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
+[node name="PointLight2D14" type="PointLight2D" parent="lights for torches" unique_id=1167974957]
+material = SubResource("CanvasItemMaterial_0bc6k")
+position = Vector2(418, -217)
+scale = Vector2(5.116, 5.116)
+color = Color(0.7361017, 0.4368535, 0.2045809, 1)
+energy = 7.7
+shadow_enabled = true
+texture = ExtResource("10_0bc6k")
+texture_scale = 0.4
+
 [node name="bumpers" type="Node2D" parent="." unique_id=1296247558]
 
 [node name="bumper" parent="bumpers" unique_id=1492372629 instance=ExtResource("11_v66k7")]
@@ -1764,10 +1938,16 @@ position = Vector2(235, -103)
 position = Vector2(296, -161)
 
 [node name="moving_platform7" parent="moving platforms" unique_id=307700377 instance=ExtResource("23_lfekj")]
-position = Vector2(425, -111)
+position = Vector2(419, -111)
 
 [node name="moving_platform8" parent="moving platforms" unique_id=1140364028 instance=ExtResource("23_lfekj")]
 position = Vector2(453, -158)
+
+[node name="moving_platform9" parent="moving platforms" unique_id=1763019816 instance=ExtResource("23_lfekj")]
+position = Vector2(282, -274)
+
+[node name="moving_platform10" parent="moving platforms" unique_id=1508901727 instance=ExtResource("23_lfekj")]
+position = Vector2(398, -263)
 
 [node name="moving spikes" type="Node2D" parent="." unique_id=589265272]
 
@@ -1813,7 +1993,7 @@ position = Vector2(347, 254)
 shape = SubResource("RectangleShape2D_gmpll")
 
 [node name="bat3" parent="bats" unique_id=864242144 instance=ExtResource("12_44fbv")]
-position = Vector2(461, -192)
+position = Vector2(461, -198)
 collision_layer = 16
 collision_mask = 8
 
@@ -1824,7 +2004,7 @@ collision_mask = 2
 script = ExtResource("3_nf54y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="bats/bat3/bat killbox" unique_id=535560451]
-position = Vector2(346, 254)
+position = Vector2(347, 254)
 shape = SubResource("RectangleShape2D_gmpll")
 
 [node name="other assets" type="Node2D" parent="." unique_id=1534028822]
@@ -1838,6 +2018,10 @@ autoplay = &"moce"
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="other assets/moving platform animation" unique_id=1156134112]
 libraries/ = SubResource("AnimationLibrary_d60jh")
 autoplay = &"mocing"
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="other assets/moving platform animation" unique_id=220306256]
+libraries/ = SubResource("AnimationLibrary_xkx26")
+autoplay = &"mocer"
 
 [node name="animation for lights" type="Node2D" parent="other assets" unique_id=1700098032]
 
@@ -1868,12 +2052,13 @@ position = Vector2(1, 0)
 color = Color(0.40705615, 0.40705618, 0.40705615, 1)
 
 [node name="obelisks" type="Node2D" parent="other assets" unique_id=1444162150]
+position = Vector2(-26, 17)
 
-[node name="obelisk" parent="other assets/obelisks" unique_id=2109583079 instance=ExtResource("21_uhta6")]
-position = Vector2(524, -391)
+[node name="obelisk_destroy" parent="other assets/obelisks" unique_id=2109583079 instance=ExtResource("22_ewrs0")]
+position = Vector2(461, -408)
 
-[node name="obelisk_destroy" parent="other assets/obelisks" unique_id=1942954298 instance=ExtResource("22_ewrs0")]
-position = Vector2(467, -391)
+[node name="obelisk" parent="other assets/obelisks" unique_id=2072918732 instance=ExtResource("21_uhta6")]
+position = Vector2(503, -408)
 
 [node name="ladder" parent="other assets" unique_id=1715058317 instance=ExtResource("15_gmpll")]
 position = Vector2(328, 94)
@@ -1881,6 +2066,11 @@ collision_mask = 3
 
 [node name="chest" parent="other assets" unique_id=632980030 instance=ExtResource("16_4m74h")]
 position = Vector2(513, 89)
+collision_layer = 4
+collision_mask = 2
+
+[node name="chest2" parent="other assets" unique_id=1765159065 instance=ExtResource("16_4m74h")]
+position = Vector2(528, -376)
 collision_layer = 4
 collision_mask = 2
 

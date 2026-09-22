@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dnunrw4do7sjn"]
 
 [ext_resource type="Script" uid="uid://buk8hpm26ykax" path="res://scripts/bat.gd" id="1_at8pt"]
-[ext_resource type="Texture2D" uid="uid://cm3i7jko6uvmk" path="res://CastleDungeonPackv3/CastleDungeonPackv3/BatMonster/BatDie.png" id="1_gysuc"]
-[ext_resource type="Texture2D" uid="uid://bgjqy1e7aej3q" path="res://CastleDungeonPackv3/CastleDungeonPackv3/BatMonster/BatFly.png" id="2_at8pt"]
+[ext_resource type="Texture2D" uid="uid://cm3i7jko6uvmk" path="res://assets/CastleDungeonPackv3/CastleDungeonPackv3/BatMonster/BatDie.png" id="1_gysuc"]
+[ext_resource type="Texture2D" uid="uid://bgjqy1e7aej3q" path="res://assets/CastleDungeonPackv3/CastleDungeonPackv3/BatMonster/BatFly.png" id="2_at8pt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxpvx"]
 atlas = ExtResource("1_gysuc")
