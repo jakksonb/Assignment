@@ -3,6 +3,7 @@ extends Control
 @onready var player = $"../../"
 @onready var stamina = $stamina
 @onready var health = $health
+@onready var blood = $"../../blood vfx"
 
 #stamina and health
 func _process(delta: float) -> void:
@@ -23,6 +24,7 @@ func _process(delta: float) -> void:
 		health.frame = 0
 	elif player.health == 75:
 		health.frame = 1
+		blood.play()
 	elif player.health == 50:
 		health.frame = 2
 	elif player.health == 25:

@@ -3,10 +3,12 @@ extends Area2D
 const coin_scene = preload("res://prefabs/coin.tscn")
 @onready var Sprite = $AnimatedSprite2D
 @export var coin_count: int = 5
+@onready var chest_open = $AudioStreamPlayer
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		Sprite.play("open")
+		chest_open.play()
 		spawn_coins()
 		collision_layer = 0
 		collision_mask = 0

@@ -67,9 +67,9 @@ func _physics_process(delta: float) -> void:
 				jump_sound.play()
 			else:
 				anim.animation = "fall"
-
+			
 		elif abs(velocity.x) > 0:
-			anim.animation = "run"
+				anim.animation = "run"
 
 		else:
 			anim.animation = "idle"

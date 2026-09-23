@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dvbxi8xswv3xl" path="res://assets/Animated Chests/Animated Chests/Chests.png" id="1_7lya3"]
 [ext_resource type="Script" uid="uid://7gdq5vkpq00n" path="res://scripts/chest.gd" id="1_c347f"]
+[ext_resource type="AudioStream" uid="uid://dyydkpr0jflgb" path="res://assets/Minifantasy_Dungeon_SFX/01_chest_open_3.wav" id="3_5xlvm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c347f"]
 atlas = ExtResource("1_7lya3")
@@ -94,5 +95,8 @@ animation = &"open"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=196906208]
 position = Vector2(-7.5, 5.5)
 shape = SubResource("RectangleShape2D_i4xkd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1176642494]
+stream = ExtResource("3_5xlvm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
