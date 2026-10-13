@@ -558,6 +558,7 @@ stream = ExtResource("11_sd3sa")
 stream = ExtResource("11_8rb0w")
 
 [node name="blood vfx" type="AnimatedSprite2D" parent="." unique_id=753298060]
+visible = false
 position = Vector2(-1.1920929e-06, 4.9758053)
 scale = Vector2(0.32, 0.38048387)
 sprite_frames = SubResource("SpriteFrames_6go5d")

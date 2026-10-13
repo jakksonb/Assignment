@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://xb0gmewbulcg" path="res://prefabs/obelisk.tscn" id="21_uhta6"]
 [ext_resource type="PackedScene" uid="uid://be2yitja2lybe" path="res://prefabs/obelisk_destroy.tscn" id="22_ewrs0"]
 [ext_resource type="PackedScene" uid="uid://dxb14fdxa17au" path="res://prefabs/moving_platform.tscn" id="23_lfekj"]
+[ext_resource type="PackedScene" uid="uid://by3s4txq3c7vn" path="res://prefabs/fireball.tscn" id="27_d60jh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nf54y"]
 texture = ExtResource("1_wpp1k")
@@ -1593,7 +1594,7 @@ position = Vector2(438, 66)
 shape = SubResource("RectangleShape2D_l8r8p")
 
 [node name="player" parent="." unique_id=260363613 instance=ExtResource("6_bq37x")]
-position = Vector2(493, 538)
+position = Vector2(360, -379)
 collision_layer = 2
 collision_mask = 229
 
@@ -2098,6 +2099,9 @@ physics_material_override = SubResource("PhysicsMaterial_d6soc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="other assets/StaticBody2D2" unique_id=1825913669]
 position = Vector2(0, -5.375)
 shape = SubResource("RectangleShape2D_uhta6")
+
+[node name="fireball" parent="." unique_id=308681921 instance=ExtResource("27_d60jh")]
+position = Vector2(411, -384)
 
 [connection signal="body_entered" from="traps and hazards collision boxes/spike2" to="traps and hazards collision boxes/spike2" method="_on_body_entered"]
 [connection signal="body_entered" from="traps and hazards collision boxes/spike3" to="traps and hazards collision boxes/spike3" method="_on_body_entered"]
