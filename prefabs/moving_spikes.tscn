@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://c4pcvw0qfc3bd"]
 
+[ext_resource type="Script" uid="uid://bmq7j4ag36q8i" path="res://scripts/moving_spikes.gd" id="1_1427m"]
 [ext_resource type="Texture2D" uid="uid://btmhqklt287qd" path="res://assets/CastleDungeonPackv3/CastleDungeonPackv3/Tileset/Tileset.png" id="1_pvwte"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1427m"]
@@ -8,6 +9,7 @@ size = Vector2(10.1875, 24.0625)
 [node name="moving spikes" type="Area2D" unique_id=367851711]
 collision_layer = 128
 collision_mask = 2
+script = ExtResource("1_1427m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1319195639]
 position = Vector2(11.90625, 0.03125)
@@ -32,3 +34,5 @@ scale = Vector2(0.8389425, 0.8214286)
 texture = ExtResource("1_pvwte")
 region_enabled = true
 region_rect = Rect2(47.375935, 112.06142, 13.166557, 14.870575)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

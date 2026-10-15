@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://g2n0cioqo30i"]
+
+[ext_resource type="Texture2D" uid="uid://btmhqklt287qd" path="res://assets/CastleDungeonPackv3/CastleDungeonPackv3/Tileset/Tileset.png" id="1_0x3xh"]
+[ext_resource type="Script" uid="uid://c6wjlwjtl3b2a" path="res://scripts/moving_spikes_2.gd" id="1_7la7r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7la7r"]
+size = Vector2(40, 31)
+
+[node name="moving_spikes 2" type="Area2D" unique_id=1435480784]
+collision_layer = 128
+collision_mask = 2
+script = ExtResource("1_7la7r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=942890235]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_7la7r")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2119069374]
+texture = ExtResource("1_0x3xh")
+region_enabled = true
+region_rect = Rect2(0, 96.53393, 15.894688, 31.073189)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=229115175]
+position = Vector2(14, -7)
+scale = Vector2(1, 1.0714285)
+texture = ExtResource("1_0x3xh")
+region_enabled = true
+region_rect = Rect2(47.71335, 112.49527, 12.745239, 14.334625)
+
+[node name="Sprite2D5" type="Sprite2D" parent="." unique_id=936218585]
+position = Vector2(14, 7.5)
+scale = Vector2(1, 1.0714285)
+texture = ExtResource("1_0x3xh")
+region_enabled = true
+region_rect = Rect2(47.71335, 112.49527, 12.745239, 14.334625)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=1928855149]
+position = Vector2(-14, -7)
+rotation = -3.1415925
+scale = Vector2(1, 1.1479591)
+texture = ExtResource("1_0x3xh")
+region_enabled = true
+region_rect = Rect2(47.71335, 112.49527, 12.745239, 14.334625)
+
+[node name="Sprite2D4" type="Sprite2D" parent="." unique_id=1649840464]
+position = Vector2(-14, 7.911854)
+rotation = 3.1415927
+scale = Vector2(1, 1.0745068)
+texture = ExtResource("1_0x3xh")
+region_enabled = true
+region_rect = Rect2(47.71335, 112.49527, 12.745239, 14.334625)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

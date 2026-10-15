@@ -158,8 +158,5 @@ shape = SubResource("RectangleShape2D_8bk7x")
 stream = ExtResource("4_1we67")
 volume_db = 4.522
 
-[node name="Timer" type="Timer" parent="." unique_id=1003946580]
-
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

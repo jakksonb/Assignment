@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://dc5qid120bfux" path="res://assets/CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterNoSword/CharacterRunNoSword.png" id="5_rgeog"]
 [ext_resource type="Texture2D" uid="uid://cik4om7t5k10n" path="res://assets/CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterJump.png" id="7_8rb0w"]
 [ext_resource type="Texture2D" uid="uid://b7aq4vhijxkjj" path="res://assets/CastleDungeonPackv3/CastleDungeonPackv3/CharacterSprites/CharacterRun.png" id="9_sd3sa"]
-[ext_resource type="AudioStream" uid="uid://bqjtvcqcqodu7" path="res://assets/Minifantasy_Dungeon_SFX/13_human_jump_land_2.wav" id="11_8rb0w"]
-[ext_resource type="AudioStream" uid="uid://ugq0jdu15425" path="res://random stuff/30_Jump_03.wav" id="11_sd3sa"]
 [ext_resource type="Texture2D" uid="uid://b4f3ooimrfgcq" path="res://assets/NEw pack blood/NEw pack blood/1_100x100px.png" id="13_m2qjg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1txc5"]
@@ -536,6 +534,8 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" unique_id=260363613 groups=["player"]]
+collision_layer = 2
+collision_mask = 245
 script = ExtResource("1_ht1c8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1677157077]
@@ -550,12 +550,6 @@ autoplay = "idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=726053813]
 zoom = Vector2(2.5, 2.5)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2128037953]
-stream = ExtResource("11_sd3sa")
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1430804786]
-stream = ExtResource("11_8rb0w")
 
 [node name="blood vfx" type="AnimatedSprite2D" parent="." unique_id=753298060]
 visible = false

@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goefv"]
-size = Vector2(20, 26)
+size = Vector2(16, 16)
 
 [node name="fireball" type="Area2D" unique_id=308681921]
 collision_layer = 128
@@ -48,12 +48,12 @@ collision_mask = 2
 script = ExtResource("1_sx0kk")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=536137681]
-scale = Vector2(0.031249998, 0.031249998)
+scale = Vector2(0.015624999, 0.015624999)
 sprite_frames = SubResource("SpriteFrames_86l2d")
+autoplay = "default"
 frame_progress = 0.043915793
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=265377337]
-position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_goefv")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

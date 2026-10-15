@@ -64,7 +64,6 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			if velocity.y > 0:
 				anim.animation = "jump"
-				jump_sound.play()
 			else:
 				anim.animation = "fall"
 			
@@ -80,7 +79,6 @@ func _physics_process(delta: float) -> void:
 		if not is_on_floor():
 			if velocity.y < 0:
 				anim.animation = "jump_sword"
-				jump_sound.play()
 			else:
 				anim.animation = "fall_sword"
 
